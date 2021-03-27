@@ -1,0 +1,13 @@
+
+
+#Nav-bar {
+  height: 100px;
+  width: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-bottom: 1px darkgray;
+}
+
+
+
