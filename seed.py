@@ -6,15 +6,14 @@ from random import choice, randint
 from faker import Faker
 import re  # this is to help split by two delimiters
 import crud
-import markov
+# import markov
+import model
+import server
 
 # UNCOMMENT THESE 6 LINES IF YOU WANT TO SEED DATABASE
-# import model
-# import server
-# os.system('dropdb yoga')
-# os.system('createdb yoga')
-# model.connect_to_db(server.app)
-# model.db.create_all()
+
+os.system('dropdb yoga')
+os.system('createdb yoga')
 
 fake = Faker()
 
@@ -64,6 +63,18 @@ def seed_sequences():
 
 
 #---------------------------------------------------------------------#
+if __name__ == '__main__':
+    model.connect_to_db(server.app)
 
-read_data = load_json('data/rebecca.json')
-seed_poses(read_data)
+    # Create tables if not already created. Delete all existing entries in tables.
+    model.db.create_all()
+
+    print("Tables created. Deleting all rows and creating new seed data.")
+
+    # Seed sample data into the database
+    read_data = load_json('data/rebecca.json')
+    seed_poses(read_data)
+    seed_users()
+    # seed_sequences()
+
+    print("Sample data seeded")

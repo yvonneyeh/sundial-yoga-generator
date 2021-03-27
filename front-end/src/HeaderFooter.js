@@ -1,5 +1,4 @@
 import React from "react";
-import logo from './logo.svg';
 import './Global.css';
 import './App.css';
 import {
@@ -8,6 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { Creators} from './Creators';
 
 
 
@@ -15,7 +15,7 @@ import {
 function NavBar() {
   return (
     <header className="Nav-bar">
-      <img src={logo} className="App-logo" alt="logo" />
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
       <p>
         Sundial
         </p>
@@ -101,10 +101,6 @@ function About() {
 
 function Users() {
   return <h2>Users</h2>;
-}
-
-function Creators() {
-  return <h2>Creators</h2>;
 }
 
 function Hackor() {

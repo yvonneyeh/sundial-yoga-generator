@@ -94,7 +94,17 @@ def make_sequence(chains, session_length="long"):
     return make_sequence(chains, session_length)
 
 
-def generate_sequence(filepath):
+def make_default_sequence(filepath):
+    """ Create a sequence list for default sequences. """
+
+    opened_file = open_and_read_file(filepath)
+    sequence = make_list(opened_file)
+
+    # print(new_sequence)
+    return sequence
+
+
+def generate_random_sequence(filepath):
     """ Create a sequence list containing strings of pose names. """
 
     opened_file = open_and_read_file(filepath)
@@ -106,23 +116,22 @@ def generate_sequence(filepath):
     return sequence
 
 
-def generate_seq_list_of_pose_objs(sequence):
+def generate_list_of_pose_objs(sequence):
     """ Create a sequence list containing pose objects. """
     
+    seq_list = []
     for english_name in sequence:
         pose_obj = crud.get_pose_by_name_eng(english_name)
         seq_list.append(pose_obj)
-
-    seq_list = []
 
     return seq_list
 
 #---------------------------------------------------------------------#
 
-a = generate_sequence('data/sequence1.txt')
+a = make_default_sequence('data/sequence1.txt')
 # b = generate_sequence('data/sequence2.txt')
 
-print(generate_seq_list_of_pose_objs(a))
+print(generate_list_of_pose_objs(a))
 # print(generate_seq_list_of_pose_objs(b))
 
 # filepath = 'data/sequence1.txt'

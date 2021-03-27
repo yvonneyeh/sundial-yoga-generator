@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./Global.css";
 import "./App.css";
 import useSWR from "swr";

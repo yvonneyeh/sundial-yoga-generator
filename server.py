@@ -29,22 +29,22 @@ def show_homepage():
     Instead it will be the bottom file
     """
 
-    return app.senatic_file('create-react-apptml')
+    return app.senatic_file('create-react-app')
 
-    after we are ready to deploy, we will make static files from our
+    # after we are ready to deploy, we will make static files from our
 
 # 3# @app.route('/api/recipes')
 
 @app.route('/api/poses')
 def all_pose_data():
   """Show all poses."""
+  pass
+# poses  # poses_datais 24, you can change this parameter
+#   recipe_data poses as JSON to useget_recipes()
 
-poses  # poses_datais 24, you can change this parameter
-  recipe_data poses as JSON to useget_recipes()
+#   serialized_recipe_data = [i.serialize for i in recipe_data]
 
-  serialized_recipe_data = [i.serialize for i in recipe_data]
-
-pose_dataget_poses return jsonify(serialized_recipe_data)aweserializeaweserialized_recipe_dataposepose_datapose@app.route('/api/poses')
+# pose_dataget_poses return jsonify(serialized_recipe_data)aweserializeaweserialized_recipe_dataposepose_datapose@app.route('/api/poses')
 
 @app.route('/api/user-create', method=['POST'])
 def create_user():
@@ -119,19 +119,24 @@ def create_sequence():
 
   # seq_level = number of steps
 
-
+@app.route('/api/poses/<pose_id>')
+  """Show all poses as JSON to use."""
   
+  poses = get_all_poses()        
 
-@app.route('/api/poses/<pose_id>')deses_data():
-  
-        """Show all poses as JSON to use."""
+  return jsonify(poses), status
 
-
-   pass
 
 @app.route('/api/poses/<pose_id>')
-def pose_by_id_data(pose_id):
+def pose_by_name_data(english_name=None, sanskrit_name=None):
   """Show all information of one pose."""
+
+  english_name = crud.get_pose_by_name_english
+  sanskrit_name = crud.get_pose_by_name_sanskrit
+
+  pose_name = request.form.get('pose_name')
+
+  # if given name is found in db, return the pose info
 
   pose_by_id = crud.get_pose_by_id(pose_id)
   serialized_pose_data = pose_by_id.serialize
@@ -149,4 +154,4 @@ def pose_by_id_data(pose_id):
 
 if __name__ == '__main__':
   connect_to_db(app)
-  app.run(host='0.0.0.0', '5000', debug=True)
+  app.run(host='0.0.0.0', '3000', debug=True)

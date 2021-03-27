@@ -108,6 +108,7 @@ def get_user_by_id(user_id):
     return User.query.filter(User.user_id == user_id).first()
 
 #/api/user-create
+#/login
 def get_user_by_email(email):
     """ Returns a user by their email. """
 
@@ -198,6 +199,9 @@ def delete_user_sequence(user_id, seq_id):
                                                 SavedSequence.seq_id == seq_id).one()
     db.session.delete(unwanted_sequence)
     db.session.commit() 
+
+
+
 
 
 
