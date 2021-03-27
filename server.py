@@ -119,7 +119,7 @@ def pose_by_id_data(pose_id):
 
   return jsonify(serialized_pose_data)
   # The default is 24, you can change this parameter
-  pose_data = cruusers_poses()
+  pose_data = users_poses()
 
   serialized_pose_data = [i.serialize for i in pose_data]
 

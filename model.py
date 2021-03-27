@@ -78,7 +78,7 @@ class SequenceStep(db.Model):
     pose_id = db.Column(db.Integer, db.ForeignKey('poses.pose_id'))
     seq_id = db.Column(db.Integer, db.ForeignKey('sequences.seq_id'))
 
-    # RELATIONSHIPS
+    # RELATIONSHIPS 
     sequence = db.relationship('Sequence', 
                                 backref=db.backref('sequences',
                                 order_by=step_num))
