@@ -23,3 +23,22 @@ for pose in rebecca_data:
                                     sanskrit_name=pose['sanskit_name'],
                                     img_url=pose['img_url']
                                     )
+
+def load_json(filepath):
+    with open(filepath) as data:
+        json.loads(data.read())
+    return read_data
+
+poses_in_db = []
+def seed_poses(read_data):
+    for pose in read_data:
+        if crud.get_pose_by_eng_name(eng_name) == None:
+            pose_obj = crud.create_pose(english_name=pose['english_name'],
+                                    sanskrit_name=pose['sanskit_name']
+                                    )
+            poses_in_db.append(pose_obj)
+    print(poses_in_db)
+
+
+#---------------------------------------------------------------------#
+

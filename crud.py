@@ -6,13 +6,15 @@ from model import db, User, Pose, Category, Sequence, SequenceStep, SavedSequenc
 def create_user(first_name,
                 last_name,
                 email,
-                password_hash):
+                password_hash,
+                level):
     """ Creates a new user """
 
     user = User(first_name=first_name,
                 last_name=last_name,
                 email=email,
-                password_hash=password_hash)
+                password_hash=password_hash),
+                level=level
 
     db.session.add(user)
     db.session.commit()
@@ -21,17 +23,17 @@ def create_user(first_name,
 
 
 def create_pose(english_name,
-                sanskrit_name,
-                instructions,
-                img_url,
-                video_url):
+                sanskrit_name):
+                # instructions,
+                # img_url,
+                # video_url):
     """ Creates a new pose """
 
     pose = Pose(english_name=english_name,
-                sanskrit_name=sanskrit_name,
-                instructions=instructions,
-                img_url=img_url,
-                video_url=video_url)
+                sanskrit_name=sanskrit_name)
+                # instructions=instructions,
+                # img_url=img_url,
+                # video_url=video_url)
 
     db.session.add(pose)
     db.session.commit()
