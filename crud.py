@@ -66,40 +66,15 @@ def create_sequence_step(step_num, pose_id, seq_id):
 def create_saved_sequence(step_num, pose_id, seq_id):
     """ Creates a saved sequence """
 
-    saved_sequence = SavedSequence(
-        step_num=step_num, pose_id=pose_id, seq_id=seq_id)
-
-    db.session.add(saved_sequence)
-    db.session.commit()
-
-    return saved_sequence
+    saved_sequence = SavedSequence(step_num=step_num, pose_id=pose_id, seq_id=seq_id)
 
 
 def create_user_pose(pose_id, user_id, saved):
-    """ Creates a User Pose """
+    pass
 
-    user_pose = UserPose(pose_id=pose_id, user_id=user_id, saved=saved)
-
-    db.session.add(user_pose)
-    db.session.commit()
-
-    return user_pose
 
 # def create_pose_category():
 #     pass
-
-
-##### GET FUNCTIONS FOR API REQUESTS TO OURSELVES ######
-def get_poses():
-
-
-def get_poses_by_id():
-
-
-def get_popular_poses():
-
-
-def get_user_by_username(username):
 
 
 if __name__ == '__main__':

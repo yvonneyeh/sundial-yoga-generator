@@ -23,4 +23,3 @@ for pose in rebecca_data:
                                     sanskrit_name=pose['sanskit_name'],
                                     img_url=pose['img_url']
                                     )
-
