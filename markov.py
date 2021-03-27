@@ -21,7 +21,6 @@ def make_list(text):
     
     [cat, cow, downward dog, tree, etc ]
     
-    
     """
     poses = text.split(",\n")
     # poses.append(poses)
@@ -60,21 +59,52 @@ def make_dict(poses):
         # append the value to the key
         chains[key].append(value)
 
-        # or we could replace the last three lines with:
-        # chains.setdefault(key, []).append(value)
-
     return chains
 
 
-s1 = 'data/sequence1.txt'
-opened_file = open_and_read_file(s1)
-new_list = make_list(opened_file)
-print(make_dict(new_list))
+def make_sequence(chains):
+    """Return randomly generated sequence from chains."""
+
+    # key is a random tuple from the dictionary's keys
+    key = choice(list(chains.keys())) 
+
+    poses = [key[0], key[1]]
+
+    pose = choice(chains[key])
+
+    # Keep looping until we reach a value of None
+    # (which would mean it was the end of our original sequence)
+    # Note that for long sequences, this might mean
+    # it would run for a very long time.
+
+    while pose is not None:
+        key = (key[1], pose)
+        poses.append(pose)
+        pose = choice(chains[key])
+
+    return poses
+
+
+#---------------------------------------------------------------------#
+
+# opened_file = open_and_read_file(s1)
+# new_list = make_list(opened_file)
+# chains = make_dict(new_list)
+# print(make_sequence(chains))
 
 # print(make_dict(make_list(open_and_read_file(s1))))
 
 
-# def make_text(chains):
-#     """ Create sequence options """
-    
-#     pass
+# Get the filepath from the user through a command line prompt, ex:
+s1 = 'data/sequence1.txt'
+
+# Open the file and turn it into one long string
+input_text1 = open_and_read_file(input_path)
+
+# Get a Markov chain
+chains1 = make_chains(input_text1)
+
+# Produce random text
+random_sequence = make_text(chains1)
+
+print(random_sequence)
