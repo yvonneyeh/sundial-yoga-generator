@@ -27,7 +27,7 @@ function NavBar() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/poses">Poses</Link>
               </li>
               <li>
                 <Link to="/users">My Account</Link>
@@ -38,7 +38,7 @@ function NavBar() {
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/about">
+            <Route path="/poses">
               <About />
             </Route>
             <Route path="/users">

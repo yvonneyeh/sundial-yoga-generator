@@ -6,6 +6,7 @@ import useSWR from "swr";
 
 // This is only the user's sequences, it is rendering as links.
 function UserSequences() {
+  
   const { userSequencesData, error } = useSWR("/api/user/<user_id>/savedsequences", fetch);
 
   if (error) return <div>failed to load</div>;

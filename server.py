@@ -86,6 +86,24 @@ def create_user():
 
       return jsonify(response), status
 
+@app.route('/login', methods=['POST'])
+def login():
+
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    user_obj = crud.get_user_by_email(email)
+    
+    if user_obj != None:
+        if password == user_obj.password:
+            session['user_id'] = user_obj.user_id
+            return redirect('/profile.html')
+        else:
+            flash('Incorrect password, please try again')
+    else:
+        flash('You have not created an account with that email. Please create account')
+    return redirect('/')
+
 
 @app.route('/api/create-sequence', method=['POST'])
 def create_sequence():
@@ -99,16 +117,17 @@ def create_sequence():
 
   seq_made.sequence_id
 
-
-
+  # seq_level = number of steps
 
 
   
 
-@app.route('/api/poses/<pose_id>')def poses_data():
-  """Show all poses as JSON to use."""
+@app.route('/api/poses/<pose_id>')deses_data():
+  
+        """Show all poses as JSON to use."""
 
-  pass
+
+   pass
 
 @app.route('/api/poses/<pose_id>')
 def pose_by_id_data(pose_id):

@@ -100,8 +100,8 @@ class SavedSequence(db.Model):
     completed = db.Column(db.Boolean, default=False)
 
     # RELATIONSHIP
-    user = db.relationship('User', backref='users')
-    sequence = db.relationship('Sequence', backref='sequences')
+    user = db.relationship('User', backref=db.backref('saved_sequences', order_by=seq_id))
+    sequence = db.relationship('Sequence', backref=db.backref('saved_sequences', order_by=seq_id))
 
     def __repr__(self):
         return f'<Saved sequence #{self.seq_id} by user {self.user_id} >'
@@ -117,8 +117,8 @@ class SavedPose(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     
     # RELATIONSHIP
-    user = db.relationship('User', backref='users')
-    pose = db.relationship('Pose', backref='poses')
+    user = db.relationship('User', backref=db.backref('saved_poses', order_by=pose_id))
+    pose = db.relationship('Pose', backref=db.backref('saved_poses', order_by=pose_id))
 
     def __repr__(self):
         return f'<Pose #{self.pose_id} saved by user #{self.user_id} >'
