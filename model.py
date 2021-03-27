@@ -16,7 +16,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True)
     # This is a security feature, password is being hashed
     password_hash = db.Column(db.String(120))
-    level = db.Column(db.String(20))
+    user_level = db.Column(db.String(20))
 
     def __repr__(self):
         return f'<User username={self.username} email={self.email}>'
@@ -33,7 +33,7 @@ class Pose(db.Model):
     instructions = db.Column(db.String(500))
     img_url = db.Column(db.String(200))
     video_url = db.Column(db.String(200))
-    level = db.Column(db.String(20))
+    pose_level = db.Column(db.String(20))
 
 
     def __repr__(self):
@@ -59,7 +59,7 @@ class Sequence(db.Model):
 
     seq_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     seq_name = db.Column(db.String(100), unique=True)
-    level = db.Column(db.String(20))
+    seq_level = db.Column(db.String(20))
 
     # RELATIONSHIPS
     # steps = a step in a sequence
@@ -126,3 +126,14 @@ class SavedPose(db.Model):
 
 # class PoseCategory(db.Model):
 #     pass
+
+##################################################
+
+
+def connect_to_db(app):
+    """Connect the database to our Flask app."""
+
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres:///yoga'
+    app.config['SQLALCHEMY_ECHO'] = False
+    db.app = app
+    db.init_app(app)

@@ -1,6 +1,7 @@
 """Generate Markov chains from txt files."""
 
 from random import choice
+import crud
 
 
 def open_and_read_file(filepath):
@@ -93,27 +94,40 @@ def make_sequence(chains, session_length="long"):
     return make_sequence(chains, session_length)
 
 
+def generate_sequence(filepath):
+    """ Create a sequence list containing strings of pose names. """
+
+    opened_file = open_and_read_file(filepath)
+    new_list = make_list(opened_file)
+    chains = make_chains(new_list)
+    sequence = make_sequence(chains)
+
+    # print(new_sequence)
+    return sequence
+
+
+def generate_seq_list_of_pose_objs(sequence):
+    """ Create a sequence list containing pose objects. """
+    
+    for english_name in sequence:
+        pose_obj = crud.get_pose_by_name_eng(english_name)
+        seq_list.append(pose_obj)
+
+    seq_list = []
+
+    return seq_list
+
 #---------------------------------------------------------------------#
 
-s1 = 'data/sequence1.txt'
-opened_file = open_and_read_file(s1)
-new_list = make_list(opened_file)
-chains = make_chains(new_list)
-print(make_sequence(chains))
+a = generate_sequence('data/sequence1.txt')
+# b = generate_sequence('data/sequence2.txt')
 
-# print(make_chains(make_list(open_and_read_file(s1))))
+print(generate_seq_list_of_pose_objs(a))
+# print(generate_seq_list_of_pose_objs(b))
 
-
-# # Get the filepath from the user through a command line prompt, ex:
-# input_path = 'data/sequence1.txt'
-
-# # Open the file and turn it into one long string
-# poses = open_and_read_file(input_path)
-
-# # Get a Markov chain
-# chains = make_chains(poses)
-
-# # Produce random text
-# random_sequence = make_sequence(chains)
-
-# print(random_sequence)
+# filepath = 'data/sequence1.txt'
+# opened_file = open_and_read_file(filepath)
+# new_list = make_list(opened_file)
+# chains = make_chains(new_list)
+# new_sequence = make_sequence(chains)
+# print(new_sequence)

@@ -6,6 +6,7 @@ from random import choice, randint
 from faker import Faker
 import re  # this is to help split by two delimiters
 import crud
+import markov
 
 # UNCOMMENT THESE 6 LINES IF YOU WANT TO SEED DATABASE
 # import model
@@ -51,10 +52,16 @@ def seed_users():
         first_name = fake.first_name()
         last_name = fake.last_name()
         password_hash = 'test'
-        level = 'intermediate'
+        level = random.choice('all','intermediate','advanced')
         new_user = crud.create_user(first_name,last_name,email,password_hash,level)
         users_in_db.append(new_user)
     print(users_in_db)
+
+seq_in_db = []
+def seed_sequences():
+    new_sequence = crud.create_sequence(seq_name, level)
+    print(seq_in_db)
+
 
 #---------------------------------------------------------------------#
 

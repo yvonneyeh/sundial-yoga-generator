@@ -2,7 +2,7 @@
 
 import os
 from flask import (Flask, render_template, request,
-                   flash, session, redirect, jsonify)
+                    flash, session, redirect, jsonify)
 from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined
@@ -35,10 +35,9 @@ def show_homepage():
 
 # 3# @app.route('/api/recipes')
 
-
-def pose_data():
+@app.route('/api/poses')
+def all_pose_data():
   """Show all poses."""
-
 
 poses  # poses_datais 24, you can change this parameter
   recipe_data poses as JSON to useget_recipes()
@@ -47,10 +46,69 @@ poses  # poses_datais 24, you can change this parameter
 
 pose_dataget_poses return jsonify(serialized_recipe_data)aweserializeaweserialized_recipe_dataposepose_datapose@app.route('/api/poses')
 
+@app.route('/api/user-create', method=['POST'])
+def create_user():
+  """Create user account."""
 
-def poses_data():
+  
+  first_name = request.form.get('first_name')
+  last_name = request.form.get('last_name')
+  email = request.form.get('email')
+  user_level = request.form.get('user_level')
+  password_hash = generate_password_hash(request.form.get('password'))
+      
+
+  user = crud.get_user_by_email(email)
+
+    if user:
+      response = {
+        "errorMessage": "This email is already associated to an account. Try logging in.",
+        "image": "https://http.cat/409",
+      }
+      status = 409
+      print(response.errorMessage)
+      print(jsonify(response), status)
+
+      return jsonify(response), status
+
+    else:
+      userCreated = crud.create_user(first_name, last_name, email, user_level, password_hash)
+      userAccountMade = crud.get_user_by_email(email)
+
+      response = {
+        "errorMessage": "None.",
+        "image": "https://http.cat/409.jpg",
+        "user": userAccountMade.serialize
+      }
+      status = 200
+
+      print("You made a yoga account!", jsonify(response), status)
+
+      return jsonify(response), status
+
+
+@app.route('/api/create-sequence', method=['POST'])
+def create_sequence():
+  """Create sequence."""
+
+  seq_name = request.form.get('seq_name')
+  seq_level = request.form.get('seq_level')
+  seq_length = request.form.get('seq_length')
+
+  seq_made = crud.create_sequence(seq_name, seq_level)
+
+  seq_made.sequence_id
+
+
+
+
+
+  
+
+@app.route('/api/poses/<pose_id>')def poses_data():
   """Show all poses as JSON to use."""
 
+  pass
 
 @app.route('/api/poses/<pose_id>')
 def pose_by_id_data(pose_id):
@@ -68,15 +126,8 @@ def pose_by_id_data(pose_id):
   return jsonify(serialized_pose_data)
 
 
-@app.route('/api/popular')
-def popular_recipes():
-  """Show default of 12 most popular recipes in descending order.
-  I changed get_random_recipes parameter to 8 instead."""
-
-  recipe_data = crud.get_popular_recipes(8)
-  serialized_recipe_data = [i.serialize for i in recipe_data]
 
 
-popular_poses return jsonify(seri12ized_recipe_daposesposesrecipes
-  # emailemail Check if user already exists    # Can't create nuser if the email address already associated to an accoutnc    # Create the user!email_enteredemailinemail_neentered"Trying to log in with ,", ":""This is the user trying to log inin:",     # UUser logedged in and saved to localocal storage!    # This user does not exist!emailaddressemail address in our databaseemailn unknown email address    # This password is not correct with the username!usernameusernameusernamesuusernameou typed in a wrong password.usernameusrernameyserusernameusernameemailemail_enteredemailmailemailuemail
-  I changed get_random_poses parameter to 8 instead.posesposeposeposeposeiistrstirst___nast_emailemail    first_name=request.form.get('fname')    user_namenameusernameusername, irst_ast_emailemailemail
+if __name__ == '__main__':
+  connect_to_db(app)
+  app.run(host='0.0.0.0', '5000', debug=True)

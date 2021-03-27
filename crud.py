@@ -1,31 +1,33 @@
 """CRUD operations."""
 
-from model import db, User, Pose, Sequence, SequenceStep, SavedSequence, SavedPose, UserPose, connect_to_db
+from model import db, User, Pose, Sequence, SequenceStep, SavedSequence, SavedPose, connect_to_db
 
 ####################################CREATE##########################################
 
+#/api/user-create
 def create_user(first_name,
                 last_name,
                 email,
-                password_hash,
-                level):
+                user_level,
+                password_hash):
     """ Creates a new user """
 
     user = User(first_name=first_name,
                 last_name=last_name,
                 email=email,
-                password_hash=password_hash,
-                level=level)
+                user_level=user_level,
+                password_hash=password_hash)
 
     db.session.add(user)
     db.session.commit()
 
     return user
 
-
+#seed.py, not in routes
 def create_pose(english_name,
                 sanskrit_name,
-                img_url):
+                img_url,
+                pose_level):
                 # instructions,
                 # video_url):
     """ Creates a new pose """
@@ -41,23 +43,24 @@ def create_pose(english_name,
 
     return pose
 
-
-def create_sequence(seq_name, level):
+#api/create-sequence
+def create_sequence(seq_name, seq_level):
     """ Creates a new sequence """
 
     sequence = Sequence(seq_name=seq_name,
-                        level=level)
+                        seq_level=seq_level)
 
     db.session.add(sequence)
     db.session.commit()
 
     return sequence
 
-
+#api/create-sequence
 def create_sequence_step(step_num, pose_id, seq_id):
     """ Creates a sequence step """
 
     sequence_step = SequenceStep(step_num=step_num,
+
                                 pose_id=pose_id,
                                 seq_id=seq_id)
 
@@ -104,7 +107,8 @@ def get_user_by_id(user_id):
 
     return User.query.filter(User.user_id == user_id).first()
 
-def get_use_by_email(email):
+#/api/user-create
+def get_user_by_email(email):
     """ Returns a user by their email. """
 
     return User.query.filter(User.email == email).first()
@@ -113,15 +117,6 @@ def get_all_poses():
     """ Returns all poses """
 
     return Pose.query.all()
-
-def get_pose_by_name(pose_name):
-    """Return all poses, sorted alphabetically. """
-    return Pose.query.order_by(Pose.pose_name).all()
-
-def get_pose_by_name_sanskrit(sanskrit_name):
-    """ Return a pose by Sanskrit name. """
-
-    return Pose.query.filter(Pose.sanskrit_name == sanskrit_name).first()
 
 def get_pose_by_id(pose_id):
     """Return one pose. """
@@ -133,24 +128,39 @@ def get_pose_by_name_eng(english_name):
 
     return Pose.query.filter_by(english_name=english_name).one()
 
-def get_user_by_email(email):
-    """Return all users. """
+def get_pose_by_name_sanskrit(sanskrit_name):
+    """ Return a pose by Sanskrit name. """
 
-    return User.query.filter(email=email).one()
+    return Pose.query.filter(Pose.sanskrit_name == sanskrit_name).first()
+
+def get_pose_by_level(pose_level):
+    """ Returns all poses of a certain level. """
+
+    return Pose.query.filter(Pose.pose_level == pose_level).all()
 
 def get_sequence_by_name(seq_name):
-    """ Return a saved sequence by name. """
-    return SavedSequence.query.filter(SavedSequence.seq_name = seq_nam).first()
+    """ Return a sequence by name. """
+    return SavedSequence.query.filter(SavedSequence.seq_name == seq_name).first()
 
-def get_users_sequences(user_id)
+def get_sequence_by_level(seq_level):
+    """ Returns all sequences of a certain level. """
+
+    return Sequence.query.filter(Sequence.seq_level == seq_level).all()
+
+def get_users_sequences(user_id):
     """Input user_id, return query of all user's saved sequences."""
-    return SavedSequence.query.filter(SavedSequence.user_id = user_id).all()
+    return SavedSequence.query.filter(SavedSequence.user_id == user_id).all()
 
-def get_step_by_sequence()
+def get_steps_by_sequence(seq_id):
+    """ Returns all steps from a sequence """
+
+    return SequenceStep.query.filter(SequenceStep.seq_id == seq_id).all()
+
+
 
 ####################################UPDATE##########################################
 
-def update_user(user_id, first_name=None, last_name=None, new_phone=None):
+def update_user(user_id, first_name=None, last_name=None, new_email=None):
     """Update user and return user."""
     
     user = db.session.query(User).get(user_id)
@@ -159,8 +169,8 @@ def update_user(user_id, first_name=None, last_name=None, new_phone=None):
         user.first_name = first_name
     if last_name:
         user.last_name = last_name
-    if new_phone:
-        user.phone = new_phone
+    if new_email:
+        user.email = new_email
 
     db.session.commit()
 
@@ -172,7 +182,7 @@ def update_user(user_id, first_name=None, last_name=None, new_phone=None):
 def delete_user(user_id):
     """Deletes user"""
 
-user = db.session.query(User).get(user_id)
+    user = db.session.query(User).get(user_id)
 
     db.session.delete(user)
     db.session.commit()
@@ -180,10 +190,12 @@ user = db.session.query(User).get(user_id)
     return f'User {user_id} is deleted.'
 
 
-def delete_user_sequence(user_id, sequence_id):
-    """Given user_id and sequence_id, deletes relationship from database."""
+def delete_user_sequence(user_id, seq_id):
+    """Given user_id and seq_id, deletes a saved sequence from database."""
     
-    unwanted_sequence = UserSequence.query.filter(UserSequence.user_id == user_id, UserSequence.sequence_id == sequence_id).one()
+    unwanted_sequence = SavedSequence.query.filter(
+                                                SavedSequence.user_id == user_id, 
+                                                SavedSequence.seq_id == seq_id).one()
     db.session.delete(unwanted_sequence)
     db.session.commit() 
 
