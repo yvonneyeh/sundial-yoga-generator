@@ -1,8 +1,11 @@
 env/
+.vscode/
 __pycache__
 *.pyc
 .DS_Store
 secrets.sh
+git
+node_modules/
 
 # FRONT-END IGNORES #
 
