@@ -1,20 +1,18 @@
 """CRUD operations."""
 
-from model import db, User, Pose, Category, Sequence, SequenceStep, SavedSequence, UserProse, PoseCategory, connect_to_db
+from model import db, User, Pose, Category, Sequence, SequenceStep, SavedSequence, UserPose, PoseCategory, connect_to_db
 
 
-def create_user(username,
-                first_name,
+def create_user(first_name,
                 last_name,
                 email,
-                password):
+                password_hash):
     """ Creates a new user """
 
-    user = User(username=username,
-                first_name=first_name,
+    user = User(first_name=first_name,
                 last_name=last_name,
                 email=email,
-                password=password)
+                password_hash=password_hash)
 
     db.session.add(user)
     db.session.commit()
@@ -41,28 +39,69 @@ def create_pose(english_name,
     return pose
 
 
-def create_category():
-    pass
+def create_sequence(seq_name):
+    """ Creates a new sequence """
+
+    sequence = Sequence(seq_name=seq_name)
+
+    db.session.add(sequence)
+    db.session.commit()
+
+    return sequence
 
 
-def create_sequence():
-    pass
+def create_sequence_step(step_num, pose_id, seq_id):
+    """ Creates a sequence step """
+
+    sequence_step = SequenceStep(step_num=step_num,
+                                 pose_id=pose_id,
+                                 seq_id=seq_id)
+
+    db.session.add(sequence_step)
+    db.session.commit()
+
+    return sequence_step
 
 
-def create_sequence_step():
-    pass
+def create_saved_sequence(step_num, pose_id, seq_id):
+    """ Creates a saved sequence """
+
+    saved_sequence = SavedSequence(
+        step_num=step_num, pose_id=pose_id, seq_id=seq_id)
+
+    db.session.add(saved_sequence)
+    db.session.commit()
+
+    return saved_sequence
 
 
-def create_saved_sequence():
-    pass
+def create_user_pose(pose_id, user_id, saved):
+    """ Creates a User Pose """
+
+    user_pose = UserPose(pose_id=pose_id, user_id=user_id, saved=saved)
+
+    db.session.add(user_pose)
+    db.session.commit()
+
+    return user_pose
+
+# def create_pose_category():
+#     pass
 
 
-def create_user_pose():
-    pass
+##### GET FUNCTIONS FOR API REQUESTS TO OURSELVES ######
+def get_poses():
 
 
-def creat_pose_category():
-    pass
+def get_poses_by_id():
+
+
+def get_popular_poses():
+
+
+def get_user_by_username(username):
+
+
 if __name__ == '__main__':
     from server import app
     connect_to_db(app)
