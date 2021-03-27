@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Yvonne Yeh",
+        "img": "/img/yvonne.jpg",
+        "github": "https://www.github.com/yvonneyeh",
+        "linkedin": "https://www.linkedin.com/in/yvonneyeh",
+        "about": "Update Yvonne about me in creators.json"
+    },
+    {
+        "name": "Jen Brissman",
+        "img": "/img/jen.jpg",
+        "github": "https://www.github.com/jenbrissman",
+        "linkedin": "https://www.linkedin.com/in/jenbrissman",
+        "about": "Update Jen Brissman about me in creators.json"
+    },
+    {
+        "name": "Ilana Mercer",
+        "img": "/img/ilana.jpg",
+        "github": "https://www.github.com/violatido",
+        "linkedin": "https://www.linkedin.com/in/i-mercer",
+        "about": "Update Ilana about me in creators.json"
+    },
+    {
+        "name": "Rachel Perkins",
+        "img": "/img/rachel.jpg",
+        "github": "https://www.github.com/rachelelysia",
+        "linkedin": "https://www.linkedin.com/in/rachelelysia",
+        "about": "As a former high school math and yearbook teacher, Rachel took a cross country move as an opportunity to explore her interests in design and eningeering."
+    }
+]
