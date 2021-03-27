@@ -16,6 +16,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True)
     # This is a security feature, password is being hashed
     password_hash = db.Column(db.String(120))
+    level = db.Column(db.String(20))
 
     def __repr__(self):
         return f'<User username={self.username} email={self.email}>'
@@ -27,11 +28,13 @@ class Pose(db.Model):
     __tablename__ = "poses"
 
     pose_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    english_name = db.Column(db.String, unique=True)
-    sanskrit_name = db.Column(db.String, unique=True)
-    instructions = db.Column(db.String)
-    img_url = db.Column(db.String)
-    video_url = db.Column(db.String)
+    english_name = db.Column(db.String(40), unique=True)
+    sanskrit_name = db.Column(db.String(50), unique=True)
+    instructions = db.Column(db.String(500))
+    img_url = db.Column(db.String(200))
+    video_url = db.Column(db.String(200))
+    level = db.Column(db.String(20))
+
 
     def __repr__(self):
         return f'<User pose_id={self.pose_id} name={self.english_name}>'
@@ -55,7 +58,11 @@ class Sequence(db.Model):
     __tablename__ = "sequences"
 
     seq_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    seq_name = db.Column(db.String, unique=True)
+    seq_name = db.Column(db.String(100), unique=True)
+    level = db.Column(db.String(20))
+
+    # RELATIONSHIPS
+    # steps = a step in a sequence
 
     def __repr__(self):
         return f'<User seq_id={self.seq_id} name={self.seq_name}>'
@@ -71,35 +78,50 @@ class SequenceStep(db.Model):
     pose_id = db.Column(db.Integer, db.ForeignKey('poses.pose_id'))
     seq_id = db.Column(db.Integer, db.ForeignKey('sequences.seq_id'))
 
+    # RELATIONSHIPS
+    sequence = db.relationship('Sequence', 
+                                backref=db.backref('sequences',
+                                order_by=step_num))
+    pose = db.relationship('Pose', 
+                                backref=db.backref('poses'))
+
     def __repr__(self):
         return f'<Step #{self.step_num} of Sequence #{self.seq_id} >'
 
 
 class SavedSequence(db.Model):
-    """A step in a sequence."""
+    """A user's saved sequence."""
 
     __tablename__ = "saved_sequences"
 
-    step_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    step_num = db.Column(db.Integer)
-    pose_id = db.Column(db.Integer, db.ForeignKey('poses.pose_id'))
+    ss_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     seq_id = db.Column(db.Integer, db.ForeignKey('sequences.seq_id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    completed = db.Column(db.Boolean, default=False)
+
+    # RELATIONSHIP
+    user = db.relationship('User', backref='users')
+    sequence = db.relationship('Sequence', backref='sequences')
 
     def __repr__(self):
-        return f'<Step #{self.step_num} of Sequence #{self.seq_id} >'
+        return f'<Saved sequence #{self.seq_id} by user {self.user_id} >'
 
 
-class UserPose(db.Model):
-    """A step in a sequence."""
+class SavedPose(db.Model):
+    """A user's saved sequence."""
 
-    __tablename__ = "user_poses"
+    __tablename__ = "saved_poses"
 
+    sp_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     pose_id = db.Column(db.Integer, db.ForeignKey('poses.pose_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-    saved = db.Column(db.Boolean, default=False)
+    
+    # RELATIONSHIP
+    user = db.relationship('User', backref='users')
+    pose = db.relationship('Pose', backref='poses')
 
     def __repr__(self):
-        return f'<pose_id={self.pose_id} saved by user_id={self.user_id} >'
+        return f'<Pose #{self.pose_id} saved by user #{self.user_id} >'
 
 
 # class PoseCategory(db.Model):

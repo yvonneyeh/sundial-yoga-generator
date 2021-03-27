@@ -30,7 +30,7 @@ def make_list(text):
     return poses
     
 
-def make_dict(poses):
+def make_chains(poses):
     """Take in list of poses, return dictionary of pose tuples and options of poses that follow them.
     
     Each key will be a tuple of two consecutive poses. 
@@ -62,7 +62,7 @@ def make_dict(poses):
     return chains
 
 
-def make_sequence(chains):
+def make_sequence(chains, session_length="long"):
     """Return randomly generated sequence from chains."""
 
     # key is a random tuple from the dictionary's keys
@@ -82,29 +82,38 @@ def make_sequence(chains):
         poses.append(pose)
         pose = choice(chains[key])
 
-    return poses
+    # Long sessions are 70 - 90 poses
+    if session_length == "long" and len(poses) < 90 and len(poses) > 70:
+        return poses
+    # Short sessions are 35 - 45 poses
+    if session_length == "short" and len(poses) < 35 and len(poses) > 45:
+        return poses
+
+    # If neither conditions are met, re-run make_sequence
+    return make_sequence(chains, session_length)
 
 
 #---------------------------------------------------------------------#
 
-# opened_file = open_and_read_file(s1)
-# new_list = make_list(opened_file)
-# chains = make_dict(new_list)
-# print(make_sequence(chains))
-
-# print(make_dict(make_list(open_and_read_file(s1))))
-
-
-# Get the filepath from the user through a command line prompt, ex:
 s1 = 'data/sequence1.txt'
+opened_file = open_and_read_file(s1)
+new_list = make_list(opened_file)
+chains = make_chains(new_list)
+print(make_sequence(chains))
 
-# Open the file and turn it into one long string
-input_text1 = open_and_read_file(input_path)
+# print(make_chains(make_list(open_and_read_file(s1))))
 
-# Get a Markov chain
-chains1 = make_chains(input_text1)
 
-# Produce random text
-random_sequence = make_text(chains1)
+# # Get the filepath from the user through a command line prompt, ex:
+# input_path = 'data/sequence1.txt'
 
-print(random_sequence)
+# # Open the file and turn it into one long string
+# poses = open_and_read_file(input_path)
+
+# # Get a Markov chain
+# chains = make_chains(poses)
+
+# # Produce random text
+# random_sequence = make_sequence(chains)
+
+# print(random_sequence)
