@@ -23,15 +23,15 @@ def make_list(text):
     
     
     """
-    poses = text_string.split(",")
-    poses.append(poses)
+    poses = text.split(",\n")
+    # poses.append(poses)
     # To set a stop point, append None to the end of ou list.
     poses.append(None)
 
     return poses
     
 
-def make_dict(pose_list):
+def make_dict(poses):
     """Take in list of poses, return dictionary of pose tuples and options of poses that follow them.
     
     Each key will be a tuple of two consecutive poses. 
@@ -66,7 +66,15 @@ def make_dict(pose_list):
     return chains
 
 
-def make_text(chains):
-    """ Create sequence options """
+s1 = 'data/sequence1.txt'
+opened_file = open_and_read_file(s1)
+new_list = make_list(opened_file)
+print(make_dict(new_list))
+
+# print(make_dict(make_list(open_and_read_file(s1))))
+
+
+# def make_text(chains):
+#     """ Create sequence options """
     
-    pass
+#     pass
