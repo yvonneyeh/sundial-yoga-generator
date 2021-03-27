@@ -66,7 +66,8 @@ def create_sequence_step(step_num, pose_id, seq_id):
 def create_saved_sequence(step_num, pose_id, seq_id):
     """ Creates a saved sequence """
 
-    saved_sequence = SavedSequence(step_num=step_num, pose_id=pose_id, seq_id=seq_id)
+    saved_sequence = SavedSequence(
+        step_num=step_num, pose_id=pose_id, seq_id=seq_id)
 
 
 def create_user_pose(pose_id, user_id, saved):
