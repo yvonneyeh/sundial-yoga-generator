@@ -7,7 +7,8 @@
         "img_url": "https://www.dropbox.com/s/4m64ztxkj8a4dab/boatstraightlegs.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.902Z",
-        "updated_at": "2016-01-14T22:23:39.902Z"
+        "updated_at": "2016-01-14T22:23:39.902Z",
+        "level": "all"
     },
     {
         "id": 2,
@@ -16,7 +17,8 @@
         "img_url": "https://www.dropbox.com/s/1nx0r94msxjwvyp/boatbentlegs.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.909Z",
-        "updated_at": "2016-01-14T22:23:39.909Z"
+        "updated_at": "2016-01-14T22:23:39.909Z",
+        "level": "all"
     },
     {
         "id": 3,
@@ -25,7 +27,8 @@
         "img_url": "https://www.dropbox.com/s/wizj5kwxvez4c0a/bow.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.912Z",
-        "updated_at": "2016-01-14T22:23:39.912Z"
+        "updated_at": "2016-01-14T22:23:39.912Z",
+        "level": "intermediate"
     },
     {
         "id": 4,
@@ -34,7 +37,8 @@
         "img_url": "https://www.dropbox.com/s/f1w64ybg4sn8ejt/bridge.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.914Z",
-        "updated_at": "2016-01-14T22:23:39.914Z"
+        "updated_at": "2016-01-14T22:23:39.914Z",
+        "level": "all"
     },
     {
         "id": 5,
@@ -43,7 +47,8 @@
         "img_url": "https://www.dropbox.com/s/3h2pts6xbn28dh7/butterfly%3F.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.917Z",
-        "updated_at": "2016-01-14T22:23:39.917Z"
+        "updated_at": "2016-01-14T22:23:39.917Z",
+        "level": "all"
     },
     {
         "id": 6,
@@ -52,7 +57,8 @@
         "img_url": "https://www.dropbox.com/s/o5gr4lngltsdg5r/camel.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.920Z",
-        "updated_at": "2016-01-14T22:23:39.920Z"
+        "updated_at": "2016-01-14T22:23:39.920Z",
+        "level": "intermediate"
     },
     {
         "id": 7,
@@ -61,7 +67,8 @@
         "img_url": "https://www.dropbox.com/s/cginnz98of2jpgr/cat.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.922Z",
-        "updated_at": "2016-01-14T22:23:39.922Z"
+        "updated_at": "2016-01-14T22:23:39.922Z",
+        "level": "all"
     },
     {
         "id": 8,
@@ -70,7 +77,8 @@
         "img_url": "https://www.dropbox.com/s/neau4ceai1rskh6/cow.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.924Z",
-        "updated_at": "2016-01-14T22:23:39.924Z"
+        "updated_at": "2016-01-14T22:23:39.924Z",
+        "level": "all"
     },
     {
         "id": 9,
@@ -79,7 +87,8 @@
         "img_url": "https://www.dropbox.com/s/9emlawz8vayk8bm/chair.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.926Z",
-        "updated_at": "2016-01-14T22:23:39.926Z"
+        "updated_at": "2016-01-14T22:23:39.926Z",
+        "level": "all"
     },
     {
         "id": 10,
@@ -88,16 +97,18 @@
         "img_url": "https://www.dropbox.com/s/ini3uwali0q5gxa/child.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.929Z",
-        "updated_at": "2016-01-14T22:23:39.929Z"
+        "updated_at": "2016-01-14T22:23:39.929Z",
+        "level": "all"
     },
     {
         "id": 11,
-        "sanskrit_name": "Sivasana",
-        "english_name": "Corpse",
+        "sanskrit_name": "Savasana",
+        "english_name": "Savasana",
         "img_url": "https://www.dropbox.com/s/eohyx2crvtjvaxb/sivasana.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.931Z",
-        "updated_at": "2016-01-14T22:23:39.931Z"
+        "updated_at": "2016-01-14T22:23:39.931Z",
+        "level": "all"
     },
     {
         "id": 12,
@@ -106,7 +117,8 @@
         "img_url": "https://www.dropbox.com/s/1oc1dqv8mfwo8uj/highlunge.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.933Z",
-        "updated_at": "2016-01-14T22:23:39.933Z"
+        "updated_at": "2016-01-14T22:23:39.933Z",
+        "level": "all"
     },
     {
         "id": 13,
@@ -115,7 +127,8 @@
         "img_url": "https://www.dropbox.com/s/ukaxoioh0uooswj/crow.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.935Z",
-        "updated_at": "2016-01-14T22:23:39.935Z"
+        "updated_at": "2016-01-14T22:23:39.935Z",
+        "level": "advanced"
     },
     {
         "id": 14,
@@ -124,7 +137,8 @@
         "img_url": "https://www.dropbox.com/s/px1foombb3v24se/dolphin.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.939Z",
-        "updated_at": "2016-01-14T22:23:39.939Z"
+        "updated_at": "2016-01-14T22:23:39.939Z",
+        "level": "intermediate"
     },
     {
         "id": 15,
@@ -133,7 +147,8 @@
         "img_url": "https://www.dropbox.com/s/75xa1bduu2u5y7d/downdog.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.944Z",
-        "updated_at": "2016-01-14T22:23:39.944Z"
+        "updated_at": "2016-01-14T22:23:39.944Z",
+        "level": "all"
     },
     {
         "id": 16,
@@ -142,7 +157,8 @@
         "img_url": "https://www.dropbox.com/s/w05qgx7wyxva1y3/eagle.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.946Z",
-        "updated_at": "2016-01-14T22:23:39.946Z"
+        "updated_at": "2016-01-14T22:23:39.946Z",
+        "level": "intermediate"
     },
     {
         "id": 17,
@@ -151,7 +167,8 @@
         "img_url": "https://www.dropbox.com/s/0yk0z7f0a4ni37l/extendedhandtotoe.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.949Z",
-        "updated_at": "2016-01-14T22:23:39.949Z"
+        "updated_at": "2016-01-14T22:23:39.949Z",
+        "level": "advanced"
     },
     {
         "id": 18,
@@ -160,7 +177,8 @@
         "img_url": "https://www.dropbox.com/s/yzynxmyb9o7eras/extendedsideangle.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.952Z",
-        "updated_at": "2016-01-14T22:23:39.952Z"
+        "updated_at": "2016-01-14T22:23:39.952Z",
+        "level": "all"
     },
     {
         "id": 19,
@@ -169,7 +187,8 @@
         "img_url": "https://www.dropbox.com/s/kjlyju4m91qgoi6/forearmstand.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.954Z",
-        "updated_at": "2016-01-14T22:23:39.954Z"
+        "updated_at": "2016-01-14T22:23:39.954Z",
+        "level": "advanced"
     },
     {
         "id": 20,
@@ -178,7 +197,8 @@
         "img_url": "https://www.dropbox.com/s/sjqfq99pqpelv4v/forwardfoldshoulderstretch.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.957Z",
-        "updated_at": "2016-01-14T22:23:39.957Z"
+        "updated_at": "2016-01-14T22:23:39.957Z",
+        "level": "all"
     },
     {
         "id": 21,
@@ -187,7 +207,8 @@
         "img_url": "https://www.dropbox.com/s/gpumf9eehr8wo9g/halfmoon.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.959Z",
-        "updated_at": "2016-01-14T22:23:39.959Z"
+        "updated_at": "2016-01-14T22:23:39.959Z",
+        "level": "intermediate"
     },
     {
         "id": 22,
@@ -196,7 +217,8 @@
         "img_url": "https://www.dropbox.com/s/p7pf5j0untktn9c/handstand.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.962Z",
-        "updated_at": "2016-01-14T22:23:39.962Z"
+        "updated_at": "2016-01-14T22:23:39.962Z",
+        "level": "advanced"
     },
     {
         "id": 23,
@@ -205,7 +227,8 @@
         "img_url": "https://www.dropbox.com/s/h0ehjaz1wa9xfu1/lowlunge.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.964Z",
-        "updated_at": "2016-01-14T22:23:39.964Z"
+        "updated_at": "2016-01-14T22:23:39.964Z",
+        "level": "all"
     },
     {
         "id": 24,
@@ -214,7 +237,8 @@
         "img_url": "https://www.dropbox.com/s/77peru289zm446u/pigeon.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.967Z",
-        "updated_at": "2016-01-14T22:23:39.967Z"
+        "updated_at": "2016-01-14T22:23:39.967Z",
+        "level": "all"
     },
     {
         "id": 25,
@@ -223,7 +247,8 @@
         "img_url": "https://www.dropbox.com/s/10usd0gcqgy6o53/kingpigeon.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.970Z",
-        "updated_at": "2016-01-14T22:23:39.970Z"
+        "updated_at": "2016-01-14T22:23:39.970Z",
+        "level": "advanced"
     },
     {
         "id": 26,
@@ -232,7 +257,8 @@
         "img_url": "https://www.dropbox.com/s/jg6ge8zpaltx10f/plank.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.972Z",
-        "updated_at": "2016-01-14T22:23:39.972Z"
+        "updated_at": "2016-01-14T22:23:39.972Z",
+        "level": "all"
     },
     {
         "id": 27,
@@ -241,7 +267,8 @@
         "img_url": "https://www.dropbox.com/s/zi9231wbajm6d2m/plow.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.977Z",
-        "updated_at": "2016-01-14T22:23:39.977Z"
+        "updated_at": "2016-01-14T22:23:39.977Z",
+        "level": "intermediate"
     },
     {
         "id": 28,
@@ -250,7 +277,8 @@
         "img_url": "https://www.dropbox.com/s/j7p2600bmf840e0/pyramid.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.979Z",
-        "updated_at": "2016-01-14T22:23:39.979Z"
+        "updated_at": "2016-01-14T22:23:39.979Z",
+        "level": "all"
     },
     {
         "id": 29,
@@ -259,7 +287,8 @@
         "img_url": "https://www.dropbox.com/s/q6yn6cb9fglo0wp/reverswarrior.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.982Z",
-        "updated_at": "2016-01-14T22:23:39.982Z"
+        "updated_at": "2016-01-14T22:23:39.982Z",
+        "level": "all"
     },
     {
         "id": 30,
@@ -268,7 +297,8 @@
         "img_url": "https://www.dropbox.com/s/ji0otecqx42by00/seatedforwardfold.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.984Z",
-        "updated_at": "2016-01-14T22:23:39.984Z"
+        "updated_at": "2016-01-14T22:23:39.984Z",
+        "level": "all"
     },
     {
         "id": 31,
@@ -277,7 +307,8 @@
         "img_url": "https://www.dropbox.com/s/0oylivjwzuj5fnp/seatedORlotus.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.986Z",
-        "updated_at": "2016-01-14T22:23:39.986Z"
+        "updated_at": "2016-01-14T22:23:39.986Z",
+        "level": "all"
     },
     {
         "id": 32,
@@ -286,7 +317,8 @@
         "img_url": "https://www.dropbox.com/s/u9joi8lbntxumyh/seatedspinaltwist.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.989Z",
-        "updated_at": "2016-01-14T22:23:39.989Z"
+        "updated_at": "2016-01-14T22:23:39.989Z",
+        "level": "intermediate"
     },
     {
         "id": 33,
@@ -295,7 +327,8 @@
         "img_url": "https://www.dropbox.com/s/tqj48exec3zub2u/shoulderstand.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.991Z",
-        "updated_at": "2016-01-14T22:23:39.991Z"
+        "updated_at": "2016-01-14T22:23:39.991Z",
+        "level": "advanced"
     },
     {
         "id": 34,
@@ -304,7 +337,8 @@
         "img_url": "https://www.dropbox.com/s/w35ciia4u570xj8/sideplank.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.993Z",
-        "updated_at": "2016-01-14T22:23:39.993Z"
+        "updated_at": "2016-01-14T22:23:39.993Z",
+        "level": "intermediate"
     },
     {
         "id": 35,
@@ -313,7 +347,8 @@
         "img_url": "https://www.dropbox.com/s/cl8teqpf9yingwm/sphinx.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.995Z",
-        "updated_at": "2016-01-14T22:23:39.995Z"
+        "updated_at": "2016-01-14T22:23:39.995Z",
+        "level": "all"
     },
     {
         "id": 36,
@@ -322,7 +357,8 @@
         "img_url": "https://www.dropbox.com/s/u8dxhc41hjfcxj6/splits.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.998Z",
-        "updated_at": "2016-01-14T22:23:39.998Z"
+        "updated_at": "2016-01-14T22:23:39.998Z",
+        "level": "advanced"
     },
     {
         "id": 37,
@@ -331,7 +367,8 @@
         "img_url": "https://www.dropbox.com/s/ntrwtdlr6tdkdxz/squat.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.000Z",
-        "updated_at": "2016-01-14T22:23:40.000Z"
+        "updated_at": "2016-01-14T22:23:40.000Z",
+        "level": "all"
     },
     {
         "id": 38,
@@ -340,7 +377,8 @@
         "img_url": "https://www.dropbox.com/s/u09snmhtposvaq0/standingforwardfold.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.003Z",
-        "updated_at": "2016-01-14T22:23:40.003Z"
+        "updated_at": "2016-01-14T22:23:40.003Z",
+        "level": "all"
     },
     {
         "id": 39,
@@ -349,7 +387,8 @@
         "img_url": "https://www.dropbox.com/s/9tv6z3qdcw2vg3a/standingstretch.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.006Z",
-        "updated_at": "2016-01-14T22:23:40.006Z"
+        "updated_at": "2016-01-14T22:23:40.006Z",
+        "level": "all"
     },
     {
         "id": 40,
@@ -358,7 +397,8 @@
         "img_url": "https://www.dropbox.com/s/6z51vzosovhx5w7/straddlesplit.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.009Z",
-        "updated_at": "2016-01-14T22:23:40.009Z"
+        "updated_at": "2016-01-14T22:23:40.009Z",
+        "level": "intermediate"
     },
     {
         "id": 41,
@@ -367,7 +407,8 @@
         "img_url": "https://www.dropbox.com/s/mn2ktlihp12mtfa/tree.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.020Z",
-        "updated_at": "2016-01-14T22:23:40.020Z"
+        "updated_at": "2016-01-14T22:23:40.020Z",
+        "level": "all"
     },
     {
         "id": 42,
@@ -376,7 +417,8 @@
         "img_url": "https://www.dropbox.com/s/l41pfqjwmjoy5os/triangle.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.022Z",
-        "updated_at": "2016-01-14T22:23:40.022Z"
+        "updated_at": "2016-01-14T22:23:40.022Z",
+        "level": "all"
     },
     {
         "id": 43,
@@ -385,7 +427,8 @@
         "img_url": "https://www.dropbox.com/s/vnfx1srlwt1583t/updog.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.025Z",
-        "updated_at": "2016-01-14T22:23:40.025Z"
+        "updated_at": "2016-01-14T22:23:40.025Z",
+        "level": "all"
     },
     {
         "id": 44,
@@ -394,7 +437,8 @@
         "img_url": "https://www.dropbox.com/s/j9fip5gm1o1l3fx/warrior1.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.027Z",
-        "updated_at": "2016-01-14T22:23:40.027Z"
+        "updated_at": "2016-01-14T22:23:40.027Z",
+        "level": "all"
     },
     {
         "id": 45,
@@ -403,7 +447,8 @@
         "img_url": "https://www.dropbox.com/s/rsb3mx41dfq4otl/warrior2.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.029Z",
-        "updated_at": "2016-01-14T22:23:40.029Z"
+        "updated_at": "2016-01-14T22:23:40.029Z",
+        "level": "all"
     },
     {
         "id": 46,
@@ -412,7 +457,8 @@
         "img_url": "https://www.dropbox.com/s/lwgoky3z37ameif/warrior3.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.032Z",
-        "updated_at": "2016-01-14T22:23:40.032Z"
+        "updated_at": "2016-01-14T22:23:40.032Z",
+        "level": "intermediate"
     },
     {
         "id": 47,
@@ -421,7 +467,8 @@
         "img_url": "https://www.dropbox.com/s/kpa1bewuut3lm5q/wheel.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.034Z",
-        "updated_at": "2016-01-14T22:23:40.034Z"
+        "updated_at": "2016-01-14T22:23:40.034Z",
+        "level": "intermediate"
     },
     {
         "id": 48,
@@ -430,7 +477,8 @@
         "img_url": "https://www.dropbox.com/s/d1dbdvo4l7xry4w/downdogflip.svg?raw=1",
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.036Z",
-        "updated_at": "2016-01-14T22:23:40.036Z"
+        "updated_at": "2016-01-14T22:23:40.036Z",
+        "level": "intermediate"
     },
     {
         "id": 49,
@@ -438,6 +486,7 @@
         "english_name": "Table Top",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 50,
@@ -445,6 +494,7 @@
         "english_name": "Thread the Needle",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 51,
@@ -452,6 +502,7 @@
         "english_name": "Standing at Attention",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 52,
@@ -459,6 +510,7 @@
         "english_name": "Mountain Pose",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
 
     {
@@ -467,6 +519,7 @@
         "english_name": "Ragdoll",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 54,
@@ -474,6 +527,7 @@
         "english_name": "Side Body Stretch",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 55,
@@ -481,6 +535,7 @@
         "english_name": "Baby Back Bend",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 56,
@@ -488,6 +543,7 @@
         "english_name": "Forward Fold",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
 
     {
@@ -496,6 +552,7 @@
         "english_name": "Gorilla",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 58,
@@ -503,6 +560,7 @@
         "english_name": "Halfway Lift",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 59,
@@ -510,6 +568,7 @@
         "english_name": "High-to-Low Plank",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 60,
@@ -517,6 +576,7 @@
         "english_name": "Airplane Arms",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 61,
@@ -524,6 +584,7 @@
         "english_name": "Open Twist",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 62,
@@ -531,6 +592,7 @@
         "english_name": "Runner's Lunge",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 63,
@@ -538,6 +600,7 @@
         "english_name": "Revolved Triangle",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 64,
@@ -545,6 +608,7 @@
         "english_name": "Humble Warrior",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 65,
@@ -552,6 +616,7 @@
         "english_name": "Prayer Twist",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 66,
@@ -559,6 +624,7 @@
         "english_name": "Star",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 67,
@@ -566,6 +632,7 @@
         "english_name": "Horse",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 68,
@@ -573,6 +640,7 @@
         "english_name": "Wide Leg Forward Fold",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 69,
@@ -580,6 +648,7 @@
         "english_name": "Fallen Triangle",
         "img_url": "",
         "user_id": 1,
+        "level": "intermediate"
     },
     {
         "id": 70,
@@ -587,6 +656,7 @@
         "english_name": "Cobra",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 71,
@@ -594,6 +664,7 @@
         "english_name": "Half Pigeon",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 72,
@@ -601,13 +672,15 @@
         "english_name": "Happy Baby",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 73,
         "sanskrit_name": "Savasana",
-        "english_name": "Savasana",
+        "english_name": "Corpse",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 74,
@@ -615,6 +688,7 @@
         "english_name": "Supine Twist",
         "img_url": "",
         "user_id": 1,
+        "level": "all"
     },
     {
         "id": 75,
@@ -622,5 +696,6 @@
         "english_name": "Revolved Crescent",
         "img_url": "",
         "user_id": 1,
+        "level": "intermediate"
     }
 ]
