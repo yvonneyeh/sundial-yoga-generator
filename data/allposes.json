@@ -8,7 +8,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.902Z",
         "updated_at": "2016-01-14T22:23:39.902Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 2,
@@ -18,7 +18,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.909Z",
         "updated_at": "2016-01-14T22:23:39.909Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 3,
@@ -28,7 +28,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.912Z",
         "updated_at": "2016-01-14T22:23:39.912Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 4,
@@ -38,7 +38,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.914Z",
         "updated_at": "2016-01-14T22:23:39.914Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 5,
@@ -48,7 +48,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.917Z",
         "updated_at": "2016-01-14T22:23:39.917Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 6,
@@ -58,7 +58,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.920Z",
         "updated_at": "2016-01-14T22:23:39.920Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 7,
@@ -68,7 +68,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.922Z",
         "updated_at": "2016-01-14T22:23:39.922Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 8,
@@ -78,7 +78,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.924Z",
         "updated_at": "2016-01-14T22:23:39.924Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 9,
@@ -88,7 +88,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.926Z",
         "updated_at": "2016-01-14T22:23:39.926Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 10,
@@ -98,7 +98,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.929Z",
         "updated_at": "2016-01-14T22:23:39.929Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 11,
@@ -108,7 +108,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.931Z",
         "updated_at": "2016-01-14T22:23:39.931Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 12,
@@ -118,7 +118,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.933Z",
         "updated_at": "2016-01-14T22:23:39.933Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 13,
@@ -128,7 +128,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.935Z",
         "updated_at": "2016-01-14T22:23:39.935Z",
-        "level": "advanced"
+        "pose_level": "advanced"
     },
     {
         "id": 14,
@@ -138,7 +138,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.939Z",
         "updated_at": "2016-01-14T22:23:39.939Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 15,
@@ -148,7 +148,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.944Z",
         "updated_at": "2016-01-14T22:23:39.944Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 16,
@@ -158,7 +158,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.946Z",
         "updated_at": "2016-01-14T22:23:39.946Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 17,
@@ -168,7 +168,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.949Z",
         "updated_at": "2016-01-14T22:23:39.949Z",
-        "level": "advanced"
+        "pose_level": "advanced"
     },
     {
         "id": 18,
@@ -178,7 +178,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.952Z",
         "updated_at": "2016-01-14T22:23:39.952Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 19,
@@ -188,7 +188,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.954Z",
         "updated_at": "2016-01-14T22:23:39.954Z",
-        "level": "advanced"
+        "pose_level": "advanced"
     },
     {
         "id": 20,
@@ -198,7 +198,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.957Z",
         "updated_at": "2016-01-14T22:23:39.957Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 21,
@@ -208,7 +208,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.959Z",
         "updated_at": "2016-01-14T22:23:39.959Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 22,
@@ -218,7 +218,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.962Z",
         "updated_at": "2016-01-14T22:23:39.962Z",
-        "level": "advanced"
+        "pose_level": "advanced"
     },
     {
         "id": 23,
@@ -228,7 +228,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.964Z",
         "updated_at": "2016-01-14T22:23:39.964Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 24,
@@ -238,7 +238,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.967Z",
         "updated_at": "2016-01-14T22:23:39.967Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 25,
@@ -248,7 +248,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.970Z",
         "updated_at": "2016-01-14T22:23:39.970Z",
-        "level": "advanced"
+        "pose_level": "advanced"
     },
     {
         "id": 26,
@@ -258,7 +258,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.972Z",
         "updated_at": "2016-01-14T22:23:39.972Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 27,
@@ -268,7 +268,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.977Z",
         "updated_at": "2016-01-14T22:23:39.977Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 28,
@@ -278,7 +278,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.979Z",
         "updated_at": "2016-01-14T22:23:39.979Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 29,
@@ -288,7 +288,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.982Z",
         "updated_at": "2016-01-14T22:23:39.982Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 30,
@@ -298,7 +298,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.984Z",
         "updated_at": "2016-01-14T22:23:39.984Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 31,
@@ -308,7 +308,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.986Z",
         "updated_at": "2016-01-14T22:23:39.986Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 32,
@@ -318,7 +318,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.989Z",
         "updated_at": "2016-01-14T22:23:39.989Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 33,
@@ -328,7 +328,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.991Z",
         "updated_at": "2016-01-14T22:23:39.991Z",
-        "level": "advanced"
+        "pose_level": "advanced"
     },
     {
         "id": 34,
@@ -338,7 +338,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.993Z",
         "updated_at": "2016-01-14T22:23:39.993Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 35,
@@ -348,7 +348,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.995Z",
         "updated_at": "2016-01-14T22:23:39.995Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 36,
@@ -358,7 +358,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:39.998Z",
         "updated_at": "2016-01-14T22:23:39.998Z",
-        "level": "advanced"
+        "pose_level": "advanced"
     },
     {
         "id": 37,
@@ -368,7 +368,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.000Z",
         "updated_at": "2016-01-14T22:23:40.000Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 38,
@@ -378,7 +378,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.003Z",
         "updated_at": "2016-01-14T22:23:40.003Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 39,
@@ -388,7 +388,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.006Z",
         "updated_at": "2016-01-14T22:23:40.006Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 40,
@@ -398,7 +398,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.009Z",
         "updated_at": "2016-01-14T22:23:40.009Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 41,
@@ -408,7 +408,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.020Z",
         "updated_at": "2016-01-14T22:23:40.020Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 42,
@@ -418,7 +418,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.022Z",
         "updated_at": "2016-01-14T22:23:40.022Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 43,
@@ -428,7 +428,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.025Z",
         "updated_at": "2016-01-14T22:23:40.025Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 44,
@@ -438,7 +438,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.027Z",
         "updated_at": "2016-01-14T22:23:40.027Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 45,
@@ -448,7 +448,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.029Z",
         "updated_at": "2016-01-14T22:23:40.029Z",
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 46,
@@ -458,7 +458,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.032Z",
         "updated_at": "2016-01-14T22:23:40.032Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 47,
@@ -468,7 +468,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.034Z",
         "updated_at": "2016-01-14T22:23:40.034Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 48,
@@ -478,7 +478,7 @@
         "user_id": 1,
         "created_at": "2016-01-14T22:23:40.036Z",
         "updated_at": "2016-01-14T22:23:40.036Z",
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 49,
@@ -486,7 +486,7 @@
         "english_name": "Table Top",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 50,
@@ -494,7 +494,7 @@
         "english_name": "Thread the Needle",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 51,
@@ -502,7 +502,7 @@
         "english_name": "Standing at Attention",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 52,
@@ -510,7 +510,7 @@
         "english_name": "Mountain Pose",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
 
     {
@@ -519,7 +519,7 @@
         "english_name": "Ragdoll",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 54,
@@ -527,7 +527,7 @@
         "english_name": "Side Body Stretch",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 55,
@@ -535,7 +535,7 @@
         "english_name": "Baby Back Bend",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 56,
@@ -543,7 +543,7 @@
         "english_name": "Forward Fold",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
 
     {
@@ -552,7 +552,7 @@
         "english_name": "Gorilla",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 58,
@@ -560,7 +560,7 @@
         "english_name": "Halfway Lift",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 59,
@@ -568,7 +568,7 @@
         "english_name": "High-to-Low Plank",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 60,
@@ -576,7 +576,7 @@
         "english_name": "Airplane Arms",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 61,
@@ -584,7 +584,7 @@
         "english_name": "Open Twist",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 62,
@@ -592,7 +592,7 @@
         "english_name": "Runner's Lunge",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 63,
@@ -600,7 +600,7 @@
         "english_name": "Revolved Triangle",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 64,
@@ -608,7 +608,7 @@
         "english_name": "Humble Warrior",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 65,
@@ -616,7 +616,7 @@
         "english_name": "Prayer Twist",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 66,
@@ -624,7 +624,7 @@
         "english_name": "Star",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 67,
@@ -632,7 +632,7 @@
         "english_name": "Horse",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 68,
@@ -640,7 +640,7 @@
         "english_name": "Wide Leg Forward Fold",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 69,
@@ -648,7 +648,7 @@
         "english_name": "Fallen Triangle",
         "img_url": "",
         "user_id": 1,
-        "level": "intermediate"
+        "pose_level": "intermediate"
     },
     {
         "id": 70,
@@ -656,7 +656,7 @@
         "english_name": "Cobra",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 71,
@@ -664,7 +664,7 @@
         "english_name": "Half Pigeon",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 72,
@@ -672,7 +672,7 @@
         "english_name": "Happy Baby",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 73,
@@ -680,7 +680,7 @@
         "english_name": "Corpse",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 74,
@@ -688,7 +688,7 @@
         "english_name": "Supine Twist",
         "img_url": "",
         "user_id": 1,
-        "level": "all"
+        "pose_level": "all"
     },
     {
         "id": 75,
@@ -696,6 +696,6 @@
         "english_name": "Revolved Crescent",
         "img_url": "",
         "user_id": 1,
-        "level": "intermediate"
+        "pose_level": "intermediate"
     }
 ]

@@ -1,8 +1,12 @@
 """Models for yoga sequencer app."""
-
+import os
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
+
+# unneeded I'm pretty sure, 
+# app = Flask(__name__)
 
 
 class User(db.Model):
@@ -27,9 +31,9 @@ class Pose(db.Model):
 
     __tablename__ = "poses"
 
-    pose_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    english_name = db.Column(db.String(40), unique=True)
-    sanskrit_name = db.Column(db.String(50), unique=True)
+    pose_id = db.Column(db.Integer, primary_key=True)
+    english_name = db.Column(db.String(50), unique=True)
+    sanskrit_name = db.Column(db.String(60), unique=True)
     instructions = db.Column(db.String(500))
     img_url = db.Column(db.String(200))
     video_url = db.Column(db.String(200))
@@ -135,5 +139,16 @@ def connect_to_db(app):
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres:///yoga'
     app.config['SQLALCHEMY_ECHO'] = False
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
     db.app = app
     db.init_app(app)
+
+if __name__ == '__main__':
+    from server import app
+
+    # As a convenience, if we run this module interactively, it will leave
+    # you in a state of being able to work with the database directly.
+    connect_to_db(app)
+    # Create tables if not already created. Delete all existing entries in tables.
+    db.create_all()
+    print('Connected to db!')

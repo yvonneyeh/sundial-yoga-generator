@@ -1,6 +1,7 @@
 env/
 .vscode/
 __pycache__
+*.sql
 *.pyc
 .DS_Store
 secrets.sh

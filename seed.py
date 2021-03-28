@@ -9,8 +9,9 @@ import crud
 # import markov
 import model
 import server
+# import pdb; pdb.set_trace()
 
-# UNCOMMENT THESE 6 LINES IF YOU WANT TO SEED DATABASE
+# UNCOMMENT THESE LINES IF YOU WANT TO SEED DATABASE
 
 os.system('dropdb yoga')
 os.system('createdb yoga')
@@ -18,29 +19,31 @@ os.system('createdb yoga')
 fake = Faker()
 
 # Populate Poses DATA table (2 Columns, 2 Parameters, PK in API)
-with open('data/rebecca.json') as rebecca:
-    rebecca_data = json.loads(rebecca.read())
+# with open('data/rebecca.json') as rebecca:
+#     rebecca_data = json.loads(rebecca.read())
 
-for pose in rebecca_data:
-    current_pose = crud.create_pose(english_name=pose['english_name'],
-                                    sanskrit_name=pose['sanskit_name'],
-                                    img_url=pose['img_url']
-                                    )
+# for pose in rebecca_data:
+#     current_pose = crud.create_pose(english_name=pose['english_name'],
+#                                     sanskrit_name=pose['sanskit_name'],
+#                                     img_url=pose['img_url']
+#                                     )
 
 def load_json(filepath):
     with open(filepath) as data:
-        json.loads(data.read())
+        read_data = json.loads(data.read())
     return read_data
+
 
 poses_in_db = []
 def seed_poses(read_data):
     for pose in read_data:
-        if crud.get_pose_by_name_eng(english_name) == None:
-            pose_obj = crud.create_pose(english_name=pose['english_name'],
-                                    sanskrit_name=pose['sanskit_name'],
-                                    img_url=pose['img_url']
-                                    )
-            poses_in_db.append(pose_obj)
+        # if crud.get_pose_by_name_eng(pose) == None:
+        pose_obj = crud.create_pose(english_name=pose['english_name'],
+                                sanskrit_name=pose['sanskrit_name'],
+                                img_url=pose['img_url'],
+                                pose_level=pose['pose_level']
+                                )
+        poses_in_db.append(pose_obj)
     print(poses_in_db)
 
 
@@ -70,11 +73,13 @@ if __name__ == '__main__':
     model.db.create_all()
 
     print("Tables created. Deleting all rows and creating new seed data.")
-
+    # pdb.run()
+    # load_json('data/allposes.json')
     # Seed sample data into the database
-    read_data = load_json('data/rebecca.json')
+    read_data = load_json('data/allposes.json')
+    # print(read_data)
     seed_poses(read_data)
-    seed_users()
+    # seed_users()
     # seed_sequences()
 
     print("Sample data seeded")

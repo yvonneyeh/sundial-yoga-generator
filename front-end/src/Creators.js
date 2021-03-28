@@ -1,9 +1,10 @@
 import React from "react";
 import "./Global.css";
 import "./App.css";
-import useSWR from "swr";
+// import useSWR from "swr";
 
 // This is the component for a creator card.
+// pass in props - some stuff
 function CreatorCard(props) {
   return (
     <Col className="p-2 m-2 col-12 col-md-6">
@@ -27,11 +28,37 @@ function CreatorCard(props) {
 }
 
 // This is the creators entire container
-function Creators() {
-  const { creatorData, error } = useSWR("/api/creators", fetch);
+function Creators() { 
 
-  if (error) return <div>failed to load</div>;
-  if (!creatorData) return <div>loading...</div>;
+  // USE SWR
+  // const { creatorData, error } = useSWR("/api/creators", fetch);
+
+  // if (error) return <div>failed to load</div>;
+  // if (!creatorData) return <div>loading...</div>;
+
+  // if (error) return <div>failed to load</div>;
+  // if (!creatorData) return <div>loading...</div>;
+
+  // if (error) return <div>failed to load</div>;
+  // if (!creatorData) return <div>loading...</div>;
+
+  // if (error) return <div>failed to load</div>;
+  // if (!creatorData) return <div>loading...</div>;
+
+  // if (error) return <div>failed to load</div>;
+  // if (!creatorData) return <div>loading...</div>;
+
+  // if (error) return <div>failed to load</div>;
+  // if (!creatorData) return <div>loading...</div>;
+
+  // if (error) return <div>failed to load</div>;
+  // if (!creatorData) return <div>loading...</div>;
+
+  // if (error) return <div>failed to load</div>;
+  // if (!creatorData) return <div>loading...</div>;
+
+  // if (error) return <div>failed to load</div>;
+  // if (!creatorData) return <div>loading...</div>;
 
   const creatorCards = creatorData.map((creator, index) => (
     <CreatorCard

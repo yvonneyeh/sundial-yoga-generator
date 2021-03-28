@@ -1,3 +1,4 @@
+"use strict";
 import React from "react";
 import "./Global.css";
 import "./App.css";
@@ -41,3 +42,24 @@ function Poses() {
 }
 
 export { Poses };
+
+
+// JENS SEARCH FEA
+// const searchBar = document.getElementById('searchBar');
+// const text = document.getElementsByClassName("col-sm-6 col-lg-4 col-xl-3 p-3");
+
+// function searchCards(queryString) {
+//     console.log(Object.values(text).filter((t) => !t.outerText.toLowerCase().includes(queryString)))
+//     console.log(Object.values(text).map((t) => console.log(t.outerText.toLowerCase())))
+//     return Object.values(text).filter((t) => !t.outerText.toLowerCase().includes(queryString))
+// }
+
+// searchBar.addEventListener('keyup', (evt) => {
+//     console.log(evt)
+//     const searchString = evt.target.value;
+//     let searchResults = searchCards(searchString.toLowerCase())
+//     for (let i = 0; i < text.length; i++) {
+//         searchResults.includes(text[i]) ? text[i].style.display = "none" : text[i].style.display = "block"    
+//     }
+// });
+

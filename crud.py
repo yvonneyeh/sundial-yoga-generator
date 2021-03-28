@@ -1,6 +1,7 @@
 """CRUD operations."""
 
-from model import db, User, Pose, Sequence, SequenceStep, SavedSequence, SavedPose, connect_to_db
+from model import *
+# db, User, Pose, Sequence, SequenceStep, SavedSequence, SavedPose, connect_to_db
 
 ####################################CREATE##########################################
 
@@ -34,7 +35,8 @@ def create_pose(english_name,
 
     pose = Pose(english_name=english_name,
                 sanskrit_name=sanskrit_name,
-                img_url=img_url)
+                img_url=img_url,
+                pose_level=pose_level)
                 # instructions=instructions,
                 # video_url=video_url)
 
@@ -122,12 +124,13 @@ def get_all_poses():
 def get_pose_by_id(pose_id):
     """Return one pose. """
 
-    return Pose.query.filer_by(pose_id=pose_id).one()
+    return Pose.query.filter_by(pose_id=pose_id).one()
 
 def get_pose_by_name_eng(english_name):
     """Return pose by English name. """
 
-    return Pose.query.filter_by(english_name=english_name).one()
+    return Pose.query.filter(Pose.english_name == english_name).first()
+    # return Pose.query.filter_by(Pose.english_name == english_name).first()
 
 def get_pose_by_name_sanskrit(sanskrit_name):
     """ Return a pose by Sanskrit name. """
@@ -201,6 +204,41 @@ def delete_user_sequence(user_id, seq_id):
     db.session.commit() 
 
 
+
+
+#RACHEL'S SEARCH FEATURE
+# def search_poses(search_phrase):
+#     """Searches poses based on the input phrase and returns pose_name."""
+
+#     related_recipes_id = set()
+#     search = "%{}%".format(search_phrase).lower()
+
+#     tag_results = Tag.query.filter(Tag.name.ilike(search)).all()
+#     # print("Tag Results", tag_results)
+#     for tag in tag_results:
+#         tag_recipes = get_recipe_ids_by_tag_id(tag.tag_id)
+#         for recipe in tag_recipes:
+#             related_recipes_id.add(recipe)
+#     # print("These are all the related recipe ids:", related_recipes_id)
+
+#     ingredients_results = Ingredient.query.filter(Ingredient.detailed_ingredient.ilike(search)).all()
+#     # print("Ingredients Results", ingredients_results)
+#     for ingredient in ingredients_results:
+#         related_recipes_id.add(ingredient.recipe_id) 
+#     # print("These are all the searches including ingredients as well!", related_recipes_id)
+
+#     title_results = Recipe.query.filter(Recipe.title.ilike(search)).all()
+#     # print("Recipe Title Results", title_results)
+#     for recipe in title_results:
+#         related_recipes_id.add(recipe.recipe_id) 
+
+#     print("These are all the searches including Title results as well!", related_recipes_id)
+
+#     return related_recipes_id
+
+
+def get_creators_info():
+    pass
 
 
 
