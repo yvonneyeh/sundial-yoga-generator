@@ -4,7 +4,7 @@ import os
 import json
 from random import choice, randint
 from faker import Faker
-import re  # this is to help split by two delimiters
+# import re  # this is to help split by two delimiters
 import crud
 # import markov
 import model
@@ -57,8 +57,8 @@ def seed_users():
         first_name = fake.first_name()
         last_name = fake.last_name()
         password_hash = 'test'
-        level = random.choice('all','intermediate','advanced')
-        new_user = crud.create_user(first_name,last_name,email,password_hash,level)
+        user_level = choice('all','intermediate','advanced')
+        new_user = crud.create_user(first_name,last_name,email,password_hash,user_level)
         users_in_db.append(new_user)
     print(users_in_db)
 
@@ -90,7 +90,8 @@ if __name__ == '__main__':
     read_data = load_json('data/allposes.json')
     # print(read_data)
     seed_poses(read_data)
-    # seed_users()
+    # seed_users() 
     # seed_sequences()
 
     print("Sample data seeded")
+

@@ -6,6 +6,7 @@ from flask import (Flask, render_template, request,
 from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined
+import json
 
 # install werkzeug to use a password_hash
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -29,16 +30,16 @@ def show_homepage():
     Instead it will be the bottom file
     """
 
-    return app.senatic_file('create-react-app')
+    return app.send_static_file('index.html')
 
     # after we are ready to deploy, we will make static files from our
 
 # 3# @app.route('/api/recipes')
 
-@app.route('/api/poses')
-def all_pose_data():
-  """Show all poses."""
-  pass
+# @app.route('/api/poses')
+# def all_pose_data():
+#   """Show all poses."""
+#   pass
 # poses  # poses_datais 24, you can change this parameter
 #   recipe_data poses as JSON to useget_recipes()
 
@@ -119,16 +120,26 @@ def all_pose_data():
 
 #   # seq_level = number of steps
 
+# @app.route('/get-callback-info', methods=["POST"])
+# def get_callback_info():
+#     if 'user_id' in session:
+#         user_id = session['user_id']
+#         project_id = request.json.get('project_id')
+#         callback_info = crud.get_projects_by_user_and_project_id(user_id, project_id)
+#         callback_dict = callback_info.__dict__
+#         callback_dict.pop('_sa_instance_state')
+
+#         return jsonify(callback_dict)
+
+
+
 @app.route('/api/poses/')
 def show_poses_json():
   """Show all poses as JSON to use."""
   
-  poses = crud.get_all_poses() 
-  pose_data = poses.serialize
+  poses = crud.get_all_poses()
 
-  serialized_pose_data = [i.serialize for i in pose_data]
-
-  return jsonify(serialized_pose_data)
+  return jsonify(jsonlist=[i.serialize for i in poses])
 
 @app.route('/api/creators/')
 def show_creators_json():

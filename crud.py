@@ -121,6 +121,7 @@ def get_all_poses():
 
     return Pose.query.all()
 
+
 def get_pose_by_id(pose_id):
     """Return one pose. """
 
@@ -209,9 +210,31 @@ def delete_user_sequence(user_id, seq_id):
     db.session.commit() 
 
 
+#################################### HELPER ##########################################
 
+def get_all_poses_as_dict():
+    """ Returns all poses """
 
-#RACHEL'S SEARCH FEATURE
+    pose_list = Pose.query.all()
+    print(pose_list)
+    pose_dict = {}
+
+    for pose in pose_list:
+        dict_key = pose.pose_id
+
+        if dict_key not in pose_dict:
+            pose_dict.get('dict_key', {})
+
+        else:
+            pose_dict[dict_key] = {}
+            pose_dict[dict_key]['english_name'] = pose.english_name
+            pose_dict[dict_key]['sanskrit_name'] = pose.sanksrit_name
+            pose_dict[dict_key]['img_url'] = pose.img_url
+            pose_dict[dict_key]['pose_level'] = pose.pose_level
+
+    return pose_dict
+ 
+ #RACHEL'S SEARCH FEATURE
 # def search_poses(search_phrase):
 #     """Searches poses based on the input phrase and returns pose_name."""
 

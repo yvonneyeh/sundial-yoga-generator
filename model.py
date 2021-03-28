@@ -17,6 +17,17 @@ class User(db.Model):
     password_hash = db.Column(db.String(120))
     user_level = db.Column(db.String(20))
 
+    @property
+    def serialize(self):
+        """Return object data in easily serializable format"""
+        return {
+            'user_id'         : self.user_id,
+            'fist_name'       : self.first_name,
+            'last_name'       : self.last_name,
+            'phone'           : self.phone,
+            'password_hash'   : self.password_hash
+        }
+
     def __repr__(self):
         return f'<User username={self.username} email={self.email}>'
 
@@ -34,6 +45,18 @@ class Pose(db.Model):
     video_url = db.Column(db.String(200))
     pose_level = db.Column(db.String(20))
 
+    @property
+    def serialize(self):
+        """Return object data in easily serializable format"""
+        return {
+            'pose_id'         : self.pose_id,
+            'english_name'    : self.english_name,
+            'sanskrit_name'   : self.sanskrit_name,
+            'instructions'    : self.instructions,
+            'img_url'         : self.img_url,
+            'video_url'       : self.video_url,
+            'pose_level'      : self.pose_level            
+        }
 
     def __repr__(self):
         return f'<User pose_id={self.pose_id} name={self.english_name}>'
@@ -62,9 +85,18 @@ class Sequence(db.Model):
 
     # RELATIONSHIPS
     # steps = a step in a sequence
+    
+    @property
+    def serialize(self):
+        """Return object data in easily serializable format"""
+        return {
+            'seq_id'      : self.seq_id,
+            'seq_name'    : self.seq_name,
+            'seq_level'   : self.seq_level
+        }
 
     def __repr__(self):
-        return f'<User seq_id={self.seq_id} name={self.seq_name}>'
+        return f'<User seq_id={self.seq_id} name={self.seq_name} level={self.seq_level}>'
 
 
 class SequenceStep(db.Model):
@@ -76,6 +108,17 @@ class SequenceStep(db.Model):
     step_num = db.Column(db.Integer)
     pose_id = db.Column(db.Integer, db.ForeignKey('poses.pose_id'))
     seq_id = db.Column(db.Integer, db.ForeignKey('sequences.seq_id'))
+
+
+    @property
+    def serialize(self):
+        """Return object data in easily serializable format"""
+        return {
+            'step_id'         : self.step_id,
+            'step_num'        : self.step_num,
+            'pose_id'         : self.pose_id,
+            'seq_id'          : self.seq_id
+        }
 
     # RELATIONSHIPS 
     sequence = db.relationship('Sequence', 
@@ -98,6 +141,16 @@ class SavedSequence(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     completed = db.Column(db.Boolean, default=False)
 
+    @property
+    def serialize(self):
+        """Return object data in easily serializable format"""
+        return {
+            'ss_id'         : self.ss_id,
+            'seq_id'        : self.seq_id,
+            'user_id'       : self.user_id,
+            'completed'     : self.completed
+        }
+
     # RELATIONSHIP
     user = db.relationship('User', backref=db.backref('saved_sequences', order_by=seq_id))
     sequence = db.relationship('Sequence', backref=db.backref('saved_sequences', order_by=seq_id))
@@ -115,6 +168,15 @@ class SavedPose(db.Model):
     pose_id = db.Column(db.Integer, db.ForeignKey('poses.pose_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     
+    @property
+    def serialize(self):
+        """Return object data in easily serializable format"""
+        return {
+            'pose_id' : self.pose_id,
+            'user_id' : self.user_id
+        }
+
+
     # RELATIONSHIP
     user = db.relationship('User', backref=db.backref('saved_poses', order_by=pose_id))
     pose = db.relationship('Pose', backref=db.backref('saved_poses', order_by=pose_id))
