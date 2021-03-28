@@ -28,7 +28,7 @@ class Pose(db.Model):
 
     pose_id = db.Column(db.Integer, primary_key=True)
     english_name = db.Column(db.String(50), unique=True)
-    sanskrit_name = db.Column(db.String(60), unique=True)
+    sanskrit_name = db.Column(db.String(60))
     instructions = db.Column(db.String(500))
     img_url = db.Column(db.String(200))
     video_url = db.Column(db.String(200))
@@ -140,8 +140,6 @@ def connect_to_db(flask_app, db_uri=os.environ.get('DATABASE_URL') or 'postgresq
 
     db.app = flask_app
     db.init_app(flask_app)
-
-    print('Connected to the db!')
 
 if __name__ == '__main__':
     from server import app
