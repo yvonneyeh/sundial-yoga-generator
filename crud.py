@@ -30,7 +30,7 @@ def create_pose(english_name,
                 img_url,
                 pose_level):
                 # instructions,
-                # video_url):
+                # video_url
     """ Creates a new pose """
 
     pose = Pose(english_name=english_name,
@@ -38,7 +38,7 @@ def create_pose(english_name,
                 img_url=img_url,
                 pose_level=pose_level)
                 # instructions=instructions,
-                # video_url=video_url)
+                # video_url=video_url
 
     db.session.add(pose)
     db.session.commit()
@@ -125,6 +125,11 @@ def get_pose_by_id(pose_id):
     """Return one pose. """
 
     return Pose.query.filter_by(pose_id=pose_id).one()
+
+def get_pose_id_by_name(english_name):
+    """Return pose id given its English name. """
+
+    return Pose.query.filter_by(english_name = english_name).one()
 
 def get_pose_by_name_eng(english_name):
     """Return pose by English name. """

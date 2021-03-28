@@ -1,13 +1,8 @@
 """Models for yoga sequencer app."""
 import os
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
-
-# unneeded I'm pretty sure, 
-# app = Flask(__name__)
-
 
 class User(db.Model):
     """A user."""
@@ -134,21 +129,32 @@ class SavedPose(db.Model):
 ##################################################
 
 
-def connect_to_db(app):
-    """Connect the database to our Flask app."""
+# How to connect my app to the DB
+def connect_to_db(flask_app, db_uri=os.environ.get('DATABASE_URL') or 'postgresql:///yoga', echo=True):
+    print("db_uri on model.py:", os.environ.get('DATABASE_URL') or 'postgresql:///yoga')
+    
+    flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+    flask_app.config['SQLALCHEMY_ECHO'] = echo
+    flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    flask_app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres:///yoga'
-    app.config['SQLALCHEMY_ECHO'] = False
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-    db.app = app
-    db.init_app(app)
+    db.app = flask_app
+    db.init_app(flask_app)
+
+    print('Connected to the db!')
 
 if __name__ == '__main__':
     from server import app
+
+    # rachel added these 3 lines 8:48 pm
+    import os
+    os.system('dropdb yoga')
+    os.system('createdb yoga')
 
     # As a convenience, if we run this module interactively, it will leave
     # you in a state of being able to work with the database directly.
     connect_to_db(app)
     # Create tables if not already created. Delete all existing entries in tables.
-    db.create_all()
+    # db.create_all()
+
     print('Connected to db!')

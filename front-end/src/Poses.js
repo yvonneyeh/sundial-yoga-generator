@@ -44,7 +44,7 @@ function Poses() {
 export { Poses };
 
 
-// JENS SEARCH FEA
+// JENS SEARCH FEATURE
 // const searchBar = document.getElementById('searchBar');
 // const text = document.getElementsByClassName("col-sm-6 col-lg-4 col-xl-3 p-3");
 
