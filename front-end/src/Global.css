@@ -1,20 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=Pragati+Narrow:400');
+@import url("https://fonts.googleapis.com/css?family=Pragati+Narrow:400");
 
-html {font-size: 100%;} /*16px*/
+html {
+  font-size: 100%;
+} /*16px*/
 
 body {
-  background: #BD7E7E;
-  font-family: 'Pragati Narrow', sans-serif;
+  background: #bd7e7e;
+  font-family: "Pragati Narrow", sans-serif;
   font-weight: 400;
   line-height: 1.75;
   color: #fff;
 }
 
-p {margin-bottom: 1rem;}
+p {
+  margin-bottom: 1rem;
+}
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 3rem 0 1.38rem;
-  font-family: 'Pragati Narrow', sans-serif;
+  font-family: "Pragati Narrow", sans-serif;
   font-weight: 400;
   line-height: 1.3;
 }
@@ -24,12 +32,23 @@ h1 {
   font-size: 2.488rem;
 }
 
-h2 {font-size: 2.074rem;}
+h2 {
+  font-size: 2.074rem;
+}
 
-h3 {font-size: 1.728rem;}
+h3 {
+  font-size: 1.728rem;
+}
 
-h4 {font-size: 1.44rem;}
+h4 {
+  font-size: 1.44rem;
+}
 
-h5 {font-size: 1.2rem;}
+h5 {
+  font-size: 1.2rem;
+}
 
-small, .text_small {font-size: 0.833rem;}
+small,
+.text_small {
+  font-size: 0.833rem;
+}

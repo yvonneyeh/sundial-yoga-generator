@@ -2,7 +2,7 @@
 
 ### Created by Jen Brissman, Ilana Rose Mercer, Rachel Perkins, Yvonne Yeh (A.K.A. **The Lovalace Ladies**)
 
-_Sundial_ is a web app for yoga students, teachers, and enthusiasts that allows a user to create custom yoga sequences. Users can also generate random sequences and save all sequences to their library of yoga "playlists". :sun_with_face:
+_Sundial_ is a web app for yoga enthusiasts that allows practitioners (teachers and students) to algorithmically generate yoga sequences at the touch of a button. Users can generate and save these sequences to use for both teaching and personal, at-home use.:sun_with_face:
 
 ## **Tech Stack**
 
@@ -12,17 +12,13 @@ _Sundial_ is a web app for yoga students, teachers, and enthusiasts that allows 
 
 ## About the project
 
-Yvonne was initially inspired to create such an app long ago while working as a yoga instructor, and her proposal was supported by our whole group (the Lovelace Ladies) as a way to provide a free, easy way to create yoga sequences. Yoga is an essential tool for the mental and physical health of many, and we felt that it was important for anyone to have free access to these sequences, and the ability to start customizing one's own personal health care.
-
-we learned: We all learned how to delegate,
-how was it built:
-challenges
+One of the most difficult parts of being a good yoga teacher is planning out effective yoga sequences that take into account the transitions between poses. Teachers also require deep understanding of the body, anatomy, and flow of positions when creating the sequences. An experienced registered yoga teacher, Yvonne proposed an app that plans out yoga sequences to her Hackathon team, the Lovelace Ladies. We are all passionate about mental health and wellness, and together we built Sundial.
 
 ## **Setup/Installation**
 
 #### **Requirements**
 
-- PostgreSQL
+- CockroachDB
 - Python 3.7.3
 
 #### **Clone this repository**
@@ -78,11 +74,11 @@ pip3 install -r requirements.txt
 
 #### **Jen Brissman**:
 
-A tenacious multi-hyphenate, Jen is an NYC based theatre, tv, film, voiceover, commercial actress and model, and a senior operations manager, a professional organizer, and lifestyle manager. She is thrilled about her new venture into the world of software engineering. In her free time, she is an adventurous world traveler who enjoys mountain biking, snowboarding, running, scuba diving, and is happiest in hiking boots. Her most recent work includes recording demo videos/recordings for prominent software companies." [_LinkedIn_](https://www.linkedin.com/in/jenbrissman) | [_Github_](https://www.github.com/jenbrissman)
+Jen is an NYC based software engineer. A tenacious multi-hyphenate, she is also a theatre, tv, film, voiceover, commercial actress and model, a senior operations manager, a professional organizer, and lifestyle manager. In her free time, she is an adventurous world traveler who happiest in hiking boots and enjoys mountain biking, snowboarding, running, and scuba diving. Her most recent work includes producing demo tutorial videos and recordings for prominent software companies. [_LinkedIn_](https://www.linkedin.com/in/jenbrissman) | [_Github_](https://www.github.com/jenbrissman)
 
 #### **Ilana Rose Mercer**:
 
-Ilana Rose Mercer is a software engineer living in New York City who is passionate about leveraging technology to help improve human quality of life. Before she learned how to code and became passionate about her career in tech, she worked as a professional classical musician and private music teacher." [_LinkedIn_](https://www.linkedin.com/in/i-mercer) | [_Github_](https://www.github.com/violatido)
+Ilana Rose Mercer is a software engineer living in New York City who is passionate about leveraging technology to help improve human quality of life. Before she learned how to code and became passionate about her career in tech, she worked as a professional classical musician and private music teacher. [_LinkedIn_](https://www.linkedin.com/in/i-mercer) | [_Github_](https://www.github.com/violatido)
 
 #### **Rachel Perkins**:
 
@@ -91,3 +87,5 @@ As a former high school math and yearbook teacher, Rachel took a cross country m
 #### **Yvonne Yeh**:
 
 Yvonne is a software engineer from the Silicon Valley who has never seen the show. Curiosity, creativity, and a love of learning are at the root of everything Yvonne does. She loves that coding because it is artful – there are infinite ways to code a program! Before she learned how to code, she worked in K-12 education, design, and mental/physical fitness. [_LinkedIn_](https://www.linkedin.com/in/yvonneyeh) | [_Github_](https://www.github.com/yvonneyeh)
+
+

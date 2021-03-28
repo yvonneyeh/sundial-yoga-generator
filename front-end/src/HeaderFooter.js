@@ -117,7 +117,7 @@ function Home() {
           </Col>
         </Row>
       </Container>
-      <Container className="w-50" style="background-color: #eee;">
+      <Container className="w-50">
         <Row className="w-50 p-5 m-5 d-flex">
           <Col className="col-sm-12 col-md-4 m-2">
             <h2>View Yoga Poses</h2>
