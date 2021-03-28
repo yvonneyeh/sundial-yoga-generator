@@ -2,6 +2,7 @@ import React from "react";
 import "./Global.css";
 import "./App.css";
 import useSWR from "swr";
+import { Row, Col, Container } from "react-bootstrap";
 
 // This is the component for a creator card.
 // pass in props - some stuff
@@ -28,8 +29,7 @@ function CreatorCard(props) {
 }
 
 // This is the creators entire container
-function Creators() { 
-
+function Creators() {
   // USE SWR
   const { creatorData, error } = useSWR("/api/creators", fetch);
 
