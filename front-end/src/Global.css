@@ -3,11 +3,11 @@
 html {font-size: 100%;} /*16px*/
 
 body {
-  background: white;
+  background: #BD7E7E;
   font-family: 'Pragati Narrow', sans-serif;
   font-weight: 400;
   line-height: 1.75;
-  color: #000000;
+  color: #fff;
 }
 
 p {margin-bottom: 1rem;}

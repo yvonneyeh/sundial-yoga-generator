@@ -5,14 +5,15 @@ from model import *
 
 #################################### CREATE ##########################################
 
-#/api/user-create
+# /api/user-create
+
+
 def create_user(first_name,
                 last_name,
                 email,
                 user_level,
                 password_hash):
     """ Creates a new user """
-
     user = User(first_name=first_name,
                 last_name=last_name,
                 email=email,
@@ -24,28 +25,32 @@ def create_user(first_name,
 
     return user
 
-#seed.py, not in routes
+# seed.py, not in routes
+
+
 def create_pose(english_name,
                 sanskrit_name,
                 img_url,
                 pose_level):
-                # instructions,
-                # video_url
+    # instructions,
+    # video_url
     """ Creates a new pose """
 
     pose = Pose(english_name=english_name,
                 sanskrit_name=sanskrit_name,
                 img_url=img_url,
                 pose_level=pose_level)
-                # instructions=instructions,
-                # video_url=video_url
+    # instructions=instructions,
+    # video_url=video_url
 
     db.session.add(pose)
     db.session.commit()
 
     return pose
 
-#api/create-sequence
+# api/create-sequence
+
+
 def create_sequence(seq_name, seq_level):
     """ Creates a new sequence """
 
@@ -57,14 +62,15 @@ def create_sequence(seq_name, seq_level):
 
     return sequence
 
-#api/create-sequence
+# api/create-sequence
+
+
 def create_sequence_step(step_num, pose_id, seq_id):
     """ Creates a sequence step """
 
     sequence_step = SequenceStep(step_num=step_num,
-
-                                pose_id=pose_id,
-                                seq_id=seq_id)
+                                 pose_id=pose_id,
+                                 seq_id=seq_id)
 
     db.session.add(sequence_step)
     db.session.commit()
@@ -74,14 +80,14 @@ def create_sequence_step(step_num, pose_id, seq_id):
 
 def create_saved_sequence(seq_id, user_id, completed):
 
-    saved_sequence = SavedSequence (seq_id=seq_id, 
-                                    user_id=user_id,
-                                    completed=completed)
+    saved_sequence = SavedSequence(seq_id=seq_id,
+                                   user_id=user_id,
+                                   completed=completed)
 
     db.session.add(saved_sequence)
     db.session.commit()
 
-    return saved_sequence                            
+    return saved_sequence
 
 
 def create_saved_pose(pose_id, user_id):
@@ -96,10 +102,12 @@ def create_saved_pose(pose_id, user_id):
     return saved_pose
 
 
+# Looks good 1:17 PM
 def create_creators(name, img, github, linkedin, about):
     """ Creates a creator of the app """
 
-    creator = Creator(name=name, img=img, github=github, linkedin=linkedin, about=about)
+    creator = Creator(name=name, img=img, github=github,
+                      linkedin=linkedin, about=about)
 
     db.session.add(creator)
     db.session.commit()
@@ -114,38 +122,46 @@ def get_all_users():
     """Return all users."""
 
     return User.query.all()
-    
+
+
 def get_user_by_id(user_id):
     """Return a user by user ID."""
 
     return User.query.filter(User.user_id == user_id).first()
 
-#/api/user-create
-#/login
+# /api/user-create
+# /login
+
+
 def get_user_by_email(email):
     """ Returns a user by their email. """
 
     return User.query.filter(User.email == email).first()
+
 
 def get_all_poses():
     """ Returns all poses """
 
     return Pose.query.all()
 
+
 def get_all_creators():
     """ Returns all creators """
 
     return Creator.query.all()
+
 
 def get_pose_by_id(pose_id):
     """Return one pose. """
 
     return Pose.query.filter_by(pose_id=pose_id).one()
 
+
 def get_pose_id_by_name(english_name):
     """Return pose id given its English name. """
 
-    return Pose.query.filter_by(english_name = english_name).first()
+    return Pose.query.filter_by(english_name=english_name).first()
+
 
 def get_pose_by_name_eng(english_name):
     """Return pose by English name. """
@@ -153,28 +169,34 @@ def get_pose_by_name_eng(english_name):
     return Pose.query.filter(Pose.english_name == english_name).first()
     # return Pose.query.filter_by(Pose.english_name == english_name).first()
 
+
 def get_pose_by_name_sanskrit(sanskrit_name):
     """ Return a pose by Sanskrit name. """
 
     return Pose.query.filter(Pose.sanskrit_name == sanskrit_name).first()
+
 
 def get_pose_by_level(pose_level):
     """ Returns all poses of a certain level. """
 
     return Pose.query.filter(Pose.pose_level == pose_level).all()
 
+
 def get_sequence_by_name(seq_name):
     """ Return a sequence by name. """
     return SavedSequence.query.filter(SavedSequence.seq_name == seq_name).first()
+
 
 def get_sequence_by_level(seq_level):
     """ Returns all sequences of a certain level. """
 
     return Sequence.query.filter(Sequence.seq_level == seq_level).all()
 
+
 def get_users_sequences(user_id):
     """Input user_id, return query of all user's saved sequences."""
     return SavedSequence.query.filter(SavedSequence.user_id == user_id).all()
+
 
 def get_steps_by_sequence(seq_id):
     if last_name:
@@ -202,12 +224,12 @@ def delete_user(user_id):
 
 def delete_user_sequence(user_id, seq_id):
     """Given user_id and seq_id, deletes a saved sequence from database."""
-    
+
     unwanted_sequence = SavedSequence.query.filter(
-                                                SavedSequence.user_id == user_id, 
-                                                SavedSequence.seq_id == seq_id).one()
+        SavedSequence.user_id == user_id,
+        SavedSequence.seq_id == seq_id).one()
     db.session.delete(unwanted_sequence)
-    db.session.commit() 
+    db.session.commit()
 
 
 #################################### HELPER ##########################################
@@ -233,8 +255,8 @@ def get_all_poses_as_dict():
             pose_dict[dict_key]['pose_level'] = pose.pose_level
 
     return pose_dict
- 
- #RACHEL'S SEARCH FEATURE
+
+ # RACHEL'S SEARCH FEATURE
 # def search_poses(search_phrase):
 #     """Searches poses based on the input phrase and returns pose_name."""
 
@@ -252,13 +274,13 @@ def get_all_poses_as_dict():
 #     ingredients_results = Ingredient.query.filter(Ingredient.detailed_ingredient.ilike(search)).all()
 #     # print("Ingredients Results", ingredients_results)
 #     for ingredient in ingredients_results:
-#         related_recipes_id.add(ingredient.recipe_id) 
+#         related_recipes_id.add(ingredient.recipe_id)
 #     # print("These are all the searches including ingredients as well!", related_recipes_id)
 
 #     title_results = Recipe.query.filter(Recipe.title.ilike(search)).all()
 #     # print("Recipe Title Results", title_results)
 #     for recipe in title_results:
-#         related_recipes_id.add(recipe.recipe_id) 
+#         related_recipes_id.add(recipe.recipe_id)
 
 #     print("These are all the searches including Title results as well!", related_recipes_id)
 
@@ -267,8 +289,6 @@ def get_all_poses_as_dict():
 
 def get_creators_info():
     pass
-
-
 
 
 if __name__ == '__main__':

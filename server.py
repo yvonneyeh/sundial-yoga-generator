@@ -2,11 +2,13 @@
 
 import os
 from flask import (Flask, render_template, request,
-                    flash, session, redirect, jsonify)
+                   flash, session, redirect, jsonify)
 from model import connect_to_db
 import crud
+
 from jinja2 import StrictUndefined
 import json
+import markov
 
 # install werkzeug to use a password_hash
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -30,7 +32,7 @@ def show_homepage():
     Instead it will be the bottom file
     """
 
-    return app.send_static_file('index.html')
+    return app.send_static_file('home.html')
 
     # after we are ready to deploy, we will make static files from our
 
@@ -51,13 +53,13 @@ def show_homepage():
 # def create_new_user():
 #   """Create user account."""
 
-  
+
 #   first_name = request.form.get('first_name')
 #   last_name = request.form.get('last_name')
 #   email = request.form.get('email')
 #   user_level = request.form.get('user_level')
 #   password_hash = generate_password_hash(request.form.get('password'))
-      
+
 
 #   user = crud.get_user_by_email(email)
 
@@ -94,7 +96,7 @@ def show_homepage():
 #     password = request.form.get('password')
 
 #     user_obj = crud.get_user_by_email(email)
-    
+
 #     if user_obj != None:
 #         if password == user_obj.password:
 #             session['user_id'] = user_obj.user_id
@@ -132,51 +134,64 @@ def show_homepage():
 #         return jsonify(callback_dict)
 
 
-
 @app.route('/api/poses/')
 def show_poses_json():
-  """Show all poses as JSON to use."""
-  
-  poses = crud.get_all_poses()
+    """Show all poses as JSON to use."""
 
-  jsonlist = [i.serialize for i in poses]
+    poses = crud.get_all_poses()
 
-  return jsonify(jsonlist)
+    jsonlist = [i.serialize for i in poses]
+
+    return jsonify(jsonlist)
+
+
 @app.route('/api/creators/')
 def show_creators_json():
-  """Show creators information as JSON to use."""
-  
+    """Show creators information as JSON to use."""
 
-  creators_data = crud.get_all_creators()
+    creators_data = crud.get_all_creators()
 
-  jsonlist = [i.serialize for i in creators_data]
+    print("*****\n****\n******\n******\n***")
+    print(creators_data) # output: []
 
-  return jsonify(jsonlist)
+    # jsonlist = [i.serialize for i in creators_data]
+
+    # return jsonify(jsonlist)
 
 
 @app.route('/api/user/<user_id>')
 def user_info(user_id):
-  """Show the user's info by id."""
-  user = crud.get_user_by_id()
+    """Show the user's info by id."""
+    user = crud.get_user_by_id()
 
-  json_me=[user.serialize]
+    json_me = [user.serialize]
 
-  return jsonify(json_me)
-  # old code ...
-  # pose_by_id = crud.get_pose_by_id(pose_id)
-  # serialized_pose_data = pose_by_id.serialize
+    return jsonify(json_me)
+    # old code ...
+    # pose_by_id = crud.get_pose_by_id(pose_id)
+    # serialized_pose_data = pose_by_id.serialize
 
-  # return jsonify(serialized_pose_data)
-  # # The default is 24, you can change this parameter
-  # pose_data = users_poses()
+    # return jsonify(serialized_pose_data)
+    # # The default is 24, you can change this parameter
+    # pose_data = users_poses()
 
-  # serialized_pose_data = [i.serialize for i in pose_data]
+    # serialized_pose_data = [i.serialize for i in pose_data]
 
-  # return jsonify(serialized_pose_data)
+    # return jsonify(serialized_pose_data)
 
 
+@app.route('/api/random-sequence/')
+def get_random_sequence():
+    """Create long, 45-70 minute sequence."""
+
+    sequence = markov.create_long_sequence()
+
+    # jsonlist = [i.serialize for i in sequence]
+
+    # return jsonify(jsonlist)
+    return jsonify(sequence)
 
 
 if __name__ == '__main__':
-  connect_to_db(app)
-  app.run(host='0.0.0.0', debug=True)
+    connect_to_db(app)
+    app.run(host='0.0.0.0', debug=True)

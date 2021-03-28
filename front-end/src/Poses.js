@@ -1,14 +1,14 @@
-"use strict";
 import React from "react";
 import "./Global.css";
 import "./App.css";
 import useSWR from "swr";
+import { Row, Col, Container } from "react-bootstrap";
 
 // This is the component for a creator card.
 function PoseCard(props) {
   return (
     <Col className="p-2 m-2 col-6 col-md-4 col-lg-3 col-xl-2">
-      <img src={props.img} alt={props.name} className="poses-img" />
+      {/* <img src={props.img} alt={props.name} className="poses-img" /> */}
       <h2>{props.english_name}</h2>
       <h3>Sanskrit: {props.sanskrit_name}</h3>
     </Col>
@@ -43,7 +43,6 @@ function Poses() {
 
 export { Poses };
 
-
 // JENS SEARCH FEATURE
 // const searchBar = document.getElementById('searchBar');
 // const text = document.getElementsByClassName("col-sm-6 col-lg-4 col-xl-3 p-3");
@@ -59,7 +58,6 @@ export { Poses };
 //     const searchString = evt.target.value;
 //     let searchResults = searchCards(searchString.toLowerCase())
 //     for (let i = 0; i < text.length; i++) {
-//         searchResults.includes(text[i]) ? text[i].style.display = "none" : text[i].style.display = "block"    
+//         searchResults.includes(text[i]) ? text[i].style.display = "none" : text[i].style.display = "block"
 //     }
 // });
-
