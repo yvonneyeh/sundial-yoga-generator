@@ -4,26 +4,27 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+
 class Creator(db.Model):
     """A user."""
 
     __tablename__ = "creators"
 
-    name = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    name = db.Column(db.String(75), primary_key=True)
     img = db.Column(db.String(100))
     github = db.Column(db.String(70))
     linkedin = db.Column(db.String(70), unique=True)
-    about = db.Column(db.String(200))
+    about = db.Column(db.String())
 
     @property
     def serialize(self):
         """Return object data in easily serializable format"""
         return {
-            'name'          : self.name,
-            'img'           : self.img,
-            'github'        : self.github,
-            'linkedin'      : self.linkedin,
-            'about'         : self.about
+            'name': self.name,
+            'img': self.img,
+            'github': self.github,
+            'linkedin': self.linkedin,
+            'about': self.about
         }
 
     def __repr__(self):
@@ -47,11 +48,11 @@ class User(db.Model):
     def serialize(self):
         """Return object data in easily serializable format"""
         return {
-            'user_id'         : self.user_id,
-            'fist_name'       : self.first_name,
-            'last_name'       : self.last_name,
-            'phone'           : self.phone,
-            'password_hash'   : self.password_hash
+            'user_id': self.user_id,
+            'fist_name': self.first_name,
+            'last_name': self.last_name,
+            'phone': self.phone,
+            'password_hash': self.password_hash
         }
 
     def __repr__(self):
@@ -64,7 +65,7 @@ class Pose(db.Model):
     __tablename__ = "poses"
 
     pose_id = db.Column(db.Integer, primary_key=True)
-    english_name = db.Column(db.String(50), unique=True)
+    english_name = db.Column(db.String(50))
     sanskrit_name = db.Column(db.String(60))
     instructions = db.Column(db.String(500))
     img_url = db.Column(db.String(200))
@@ -75,17 +76,17 @@ class Pose(db.Model):
     def serialize(self):
         """Return object data in easily serializable format"""
         return {
-            'pose_id'         : self.pose_id,
-            'english_name'    : self.english_name,
-            'sanskrit_name'   : self.sanskrit_name,
-            'instructions'    : self.instructions,
-            'img_url'         : self.img_url,
-            'video_url'       : self.video_url,
-            'pose_level'      : self.pose_level            
+            'pose_id': self.pose_id,
+            'english_name': self.english_name,
+            'sanskrit_name': self.sanskrit_name,
+            'instructions': self.instructions,
+            'img_url': self.img_url,
+            'video_url': self.video_url,
+            'pose_level': self.pose_level
         }
 
     def __repr__(self):
-        return f'<User pose_id={self.pose_id} name={self.english_name}>'
+        return f'<Pose pose_id={self.pose_id} name={self.english_name}>'
 
 
 # class Category(db.Model):
@@ -111,14 +112,14 @@ class Sequence(db.Model):
 
     # RELATIONSHIPS
     # steps = a step in a sequence
-    
+
     @property
     def serialize(self):
         """Return object data in easily serializable format"""
         return {
-            'seq_id'      : self.seq_id,
-            'seq_name'    : self.seq_name,
-            'seq_level'   : self.seq_level
+            'seq_id': self.seq_id,
+            'seq_name': self.seq_name,
+            'seq_level': self.seq_level
         }
 
     def __repr__(self):
@@ -135,23 +136,22 @@ class SequenceStep(db.Model):
     pose_id = db.Column(db.Integer, db.ForeignKey('poses.pose_id'))
     seq_id = db.Column(db.Integer, db.ForeignKey('sequences.seq_id'))
 
-
     @property
     def serialize(self):
         """Return object data in easily serializable format"""
         return {
-            'step_id'         : self.step_id,
-            'step_num'        : self.step_num,
-            'pose_id'         : self.pose_id,
-            'seq_id'          : self.seq_id
+            'step_id': self.step_id,
+            'step_num': self.step_num,
+            'pose_id': self.pose_id,
+            'seq_id': self.seq_id
         }
 
-    # RELATIONSHIPS 
-    sequence = db.relationship('Sequence', 
-                                backref=db.backref('sequences',
-                                order_by=step_num))
-    pose = db.relationship('Pose', 
-                                backref=db.backref('poses'))
+    # RELATIONSHIPS
+    sequence = db.relationship('Sequence',
+                               backref=db.backref('sequences',
+                                                  order_by=step_num))
+    pose = db.relationship('Pose',
+                           backref=db.backref('poses'))
 
     def __repr__(self):
         return f'<Step #{self.step_num} of Sequence #{self.seq_id} >'
@@ -171,15 +171,17 @@ class SavedSequence(db.Model):
     def serialize(self):
         """Return object data in easily serializable format"""
         return {
-            'ss_id'         : self.ss_id,
-            'seq_id'        : self.seq_id,
-            'user_id'       : self.user_id,
-            'completed'     : self.completed
+            'ss_id': self.ss_id,
+            'seq_id': self.seq_id,
+            'user_id': self.user_id,
+            'completed': self.completed
         }
 
     # RELATIONSHIP
-    user = db.relationship('User', backref=db.backref('saved_sequences', order_by=seq_id))
-    sequence = db.relationship('Sequence', backref=db.backref('saved_sequences', order_by=seq_id))
+    user = db.relationship('User', backref=db.backref(
+        'saved_sequences', order_by=seq_id))
+    sequence = db.relationship('Sequence', backref=db.backref(
+        'saved_sequences', order_by=seq_id))
 
     def __repr__(self):
         return f'<Saved sequence #{self.seq_id} by user {self.user_id} >'
@@ -193,19 +195,20 @@ class SavedPose(db.Model):
     sp_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     pose_id = db.Column(db.Integer, db.ForeignKey('poses.pose_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-    
+
     @property
     def serialize(self):
         """Return object data in easily serializable format"""
         return {
-            'pose_id' : self.pose_id,
-            'user_id' : self.user_id
+            'pose_id': self.pose_id,
+            'user_id': self.user_id
         }
 
-
     # RELATIONSHIP
-    user = db.relationship('User', backref=db.backref('saved_poses', order_by=pose_id))
-    pose = db.relationship('Pose', backref=db.backref('saved_poses', order_by=pose_id))
+    user = db.relationship('User', backref=db.backref(
+        'saved_poses', order_by=pose_id))
+    pose = db.relationship('Pose', backref=db.backref(
+        'saved_poses', order_by=pose_id))
 
     def __repr__(self):
         return f'<Pose #{self.pose_id} saved by user #{self.user_id} >'
@@ -219,8 +222,9 @@ class SavedPose(db.Model):
 
 # How to connect my app to the DB
 def connect_to_db(flask_app, db_uri=os.environ.get('DATABASE_URL') or 'postgresql:///yoga', echo=True):
-    print("db_uri on model.py:", os.environ.get('DATABASE_URL') or 'postgresql:///yoga')
-    
+    print("db_uri on model.py:", os.environ.get(
+        'DATABASE_URL') or 'postgresql:///yoga')
+
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo
     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -228,6 +232,7 @@ def connect_to_db(flask_app, db_uri=os.environ.get('DATABASE_URL') or 'postgresq
 
     db.app = flask_app
     db.init_app(flask_app)
+
 
 if __name__ == '__main__':
     from server import app

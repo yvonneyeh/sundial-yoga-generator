@@ -1,5 +1,3 @@
-
-
 # **Sundial**
 Created by **The Lovelace Ladies**: Jen Brissman, Ilana Rose Mercer, Rachel Perkins, Yvonne Yeh
 
@@ -43,7 +41,6 @@ We learned that being ambitious with our MVP can lead to some incredible learnin
 - Share sequences with other members
 - Incorporate Twilio API to send sequences via text or email
 
-
 ## **About the Lovelace Ladies**
 
 #### **Jen Brissman**:
@@ -51,15 +48,13 @@ We learned that being ambitious with our MVP can lead to some incredible learnin
 
 Jen is an NYC based software engineer. A tenacious multi-hyphenate, she is also a theatre, tv, film, voiceover, commercial actress and model, a senior operations manager, a professional organizer, and lifestyle manager. In her free time, she is an adventurous world traveler who happiest in hiking boots and enjoys mountain biking, snowboarding, running, and scuba diving. Her most recent work includes producing demo tutorial videos and recordings for prominent software companies.
 
-
 #### **Ilana Rose Mercer**:
- [*LinkedIn*](https://www.linkedin.com/in/i-mercer) | [*Github*](https://www.github.com/violatido)
+[*LinkedIn*](https://www.linkedin.com/in/i-mercer) | [*Github*](https://www.github.com/violatido)
 
 Ilana Rose Mercer is a software engineer living in New York City who is passionate about leveraging technology to help improve human quality of life. Before she learned how to code and became passionate about her career in tech, she worked as a professional classical musician and private music teacher.
 
-
 #### **Rachel Perkins**:
- [*LinkedIn*](https://www.linkedin.com/in/rachelelysia) | [*Github*](https://www.github.com/rachelelysia)
+[*LinkedIn*](https://www.linkedin.com/in/rachelelysia) | [*Github*](https://www.github.com/rachelelysia)
 
 As a former high school math and yearbook teacher, Rachel took a cross country move as an opportunity to explore her interests in design and eningeering. Engineering has challenged her in all the right ways and it's hard to take her away from learning.
 
