@@ -139,35 +139,29 @@ def show_poses_json():
   
   poses = crud.get_all_poses()
 
-  return jsonify(jsonlist=[i.serialize for i in poses])
+  jsonlist = [i.serialize for i in poses]
 
+  return jsonify(jsonlist)
 @app.route('/api/creators/')
 def show_creators_json():
   """Show creators information as JSON to use."""
   
-  # Can we return this with creators.json directly somehow?
-  # then we won't have to serialize?
-  # and won't have to crud function it?
 
-  with open('data/creators.json') as creators:
-    creators_data = json.loads(creators.read())
-  
-  serialized_creators_data = [i.serialize for i in creators_data]
+  creators_data = crud.get_all_creators()
 
-  return jsonify(serialized_creators_data)
+  jsonlist = [i.serialize for i in creators_data]
 
-@app.route('/api/poses/<pose_id>')
-def pose_by_name_data(english_name=None, sanskrit_name=None):
-  """Show all information of one pose."""
-
-  english_name = crud.get_pose_by_name_english
-  sanskrit_name = crud.get_pose_by_name_sanskrit
-
-  pose_name = request.form.get('pose_name')
-
-  # if given name is found in db, return the pose info
+  return jsonify(jsonlist)
 
 
+@app.route('/api/user/<user_id>')
+def user_info(user_id):
+  """Show the user's info by id."""
+  user = crud.get_user_by_id()
+
+  json_me=[user.serialize]
+
+  return jsonify(json_me)
   # old code ...
   # pose_by_id = crud.get_pose_by_id(pose_id)
   # serialized_pose_data = pose_by_id.serialize

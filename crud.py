@@ -3,7 +3,7 @@
 from model import *
 # db, User, Pose, Sequence, SequenceStep, SavedSequence, SavedPose, connect_to_db
 
-####################################CREATE##########################################
+#################################### CREATE ##########################################
 
 #/api/user-create
 def create_user(first_name,
@@ -85,7 +85,7 @@ def create_saved_sequence(seq_id, user_id, completed):
 
 
 def create_saved_pose(pose_id, user_id):
-    """ Creates a saved se. """
+    """ Creates a saved sequence. """
 
     saved_pose = SavedPose(
         pose_id=pose_id, user_id=user_id)
@@ -96,7 +96,18 @@ def create_saved_pose(pose_id, user_id):
     return saved_pose
 
 
-####################################READ##########################################
+def create_creators(name, img, github, linkedin, about):
+    """ Creates a creator of the app """
+
+    creator = Creator(name=name, img=img, github=github, linkedin=linkedin, about=about)
+
+    db.session.add(creator)
+    db.session.commit()
+
+    return creator
+
+
+#################################### READ ##########################################
 
 
 def get_all_users():
@@ -121,6 +132,10 @@ def get_all_poses():
 
     return Pose.query.all()
 
+def get_all_creators():
+    """ Returns all creators """
+
+    return Creator.query.all()
 
 def get_pose_by_id(pose_id):
     """Return one pose. """
@@ -130,7 +145,7 @@ def get_pose_by_id(pose_id):
 def get_pose_id_by_name(english_name):
     """Return pose id given its English name. """
 
-    return Pose.query.filter_by(english_name = english_name).one()
+    return Pose.query.filter_by(english_name = english_name).first()
 
 def get_pose_by_name_eng(english_name):
     """Return pose by English name. """
@@ -162,21 +177,6 @@ def get_users_sequences(user_id):
     return SavedSequence.query.filter(SavedSequence.user_id == user_id).all()
 
 def get_steps_by_sequence(seq_id):
-    """ Returns all steps from a sequence """
-
-    return SequenceStep.query.filter(SequenceStep.seq_id == seq_id).all()
-
-
-
-####################################UPDATE##########################################
-
-def update_user(user_id, first_name=None, last_name=None, new_email=None):
-    """Update user and return user."""
-    
-    user = db.session.query(User).get(user_id)
-
-    if first_name:
-        user.first_name = first_name
     if last_name:
         user.last_name = last_name
     if new_email:

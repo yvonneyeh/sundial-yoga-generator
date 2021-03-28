@@ -218,8 +218,8 @@ class SavedPose(db.Model):
 
 
 # How to connect my app to the DB
-def connect_to_db(flask_app, db_uri=os.environ.get('DATABASE_URL') or 'postgresql:///yoga', echo=True):
-    print("db_uri on model.py:", os.environ.get('DATABASE_URL') or 'postgresql:///yoga')
+def connect_to_db(flask_app, db_uri=os.environ.get('DATABASE_URL') or 'cockroachdb://yoga', echo=True):
+    print("db_uri on model.py:", os.environ.get('DATABASE_URL') or 'cockroachdb://yoga')
     
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo

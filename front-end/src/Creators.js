@@ -1,7 +1,7 @@
 import React from "react";
 import "./Global.css";
 import "./App.css";
-// import useSWR from "swr";
+import useSWR from "swr";
 
 // This is the component for a creator card.
 // pass in props - some stuff
@@ -31,10 +31,10 @@ function CreatorCard(props) {
 function Creators() { 
 
   // USE SWR
-  // const { creatorData, error } = useSWR("/api/creators", fetch);
+  const { creatorData, error } = useSWR("/api/creators", fetch);
 
-  // if (error) return <div>failed to load</div>;
-  // if (!creatorData) return <div>loading...</div>;
+  if (error) return <div>failed to load</div>;
+  if (!creatorData) return <div>loading...</div>;
 
   // if (error) return <div>failed to load</div>;
   // if (!creatorData) return <div>loading...</div>;

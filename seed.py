@@ -9,17 +9,20 @@ import crud
 # import markov
 import model
 import server
+# from sqlalchemy import create_engine
 # import pdb; pdb.set_trace()
 
-# UNCOMMENT THESE LINES IF YOU WANT TO SEED DATABASE
+# UNCOMMENT THESE LINES WHEN SEEDING DATABASE
 
 os.system('dropdb yoga')
 os.system('createdb yoga')
-# rachel added 8:52 PM
+
 model.connect_to_db(server.app)
 model.db.create_all()
 
 fake = Faker()
+
+# engine = create_engine('cockroachdb://root@localhost:26257/defaultdb?sslmode=disable')
 
 # Populate Poses DATA table (2 Columns, 2 Parameters, PK in API)
 # with open('data/rebecca.json') as rebecca:
@@ -57,21 +60,46 @@ def seed_users():
         first_name = fake.first_name()
         last_name = fake.last_name()
         password_hash = 'test'
-        user_level = choice('all','intermediate','advanced')
+        user_level = choice(['all','intermediate','advanced'])
         new_user = crud.create_user(first_name,last_name,email,password_hash,user_level)
         users_in_db.append(new_user)
     print(users_in_db)
 
+creators_in_db = []
+def seed_creators():
+
+    read_data = load_json('data/creators.json')
+    for creator in read_data:
+        creator_obj = crud.create_creators(name=creator['name'], 
+                                img=creator['img'], 
+                                github=creator['github'], 
+                                linkedin=creator['linkedin'], 
+                                about=creator['about'])
+    creators_in_db.append(creator_obj)
+    print(creators_in_db)
+
+
 seq_in_db = []
 def seed_sequences():
+
+    seq_name = "Power Yoga"
+    level = choice(['all','intermediate','advanced'])
     new_sequence = crud.create_sequence(seq_name, level)
     seq_in_db.append(new_sequence)
+    
     print(seq_in_db)
 
+
 steps_in_db = []
-def seed_steps():
+def seed_steps(sequence):
     
-    new_step = crud.create_sequence_step(step_num, pose_id, seq_id)
+    for count, name in enumerate(sequence):
+        step_num = count + 1
+        pose_id = crud.get_pose_id_by_name(name)
+        # test sequence ID
+        seq_id = 1
+        new_step = crud.create_sequence_step(step_num, pose_id, seq_id)
+        steps_in_db.append(new_step)
 
     print(steps_in_db)
 
@@ -90,8 +118,9 @@ if __name__ == '__main__':
     read_data = load_json('data/allposes.json')
     # print(read_data)
     seed_poses(read_data)
-    # seed_users() 
-    # seed_sequences()
+    seed_users() 
+    seed_creators()
+    seed_sequences()
 
     print("Sample data seeded")
 
