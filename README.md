@@ -66,7 +66,7 @@ Jen is an NYC based software engineer. A tenacious multi-hyphenate, she is also 
 ### **Ilana Rose Mercer**:
 [*LinkedIn*](https://www.linkedin.com/in/i-mercer) | [*Github*](https://www.github.com/violatido)
 
-Ilana Rose Mercer is a software engineer living in New York City who is passionate about leveraging technology to help improve human quality of life. Before she learned how to code and became passionate about her career in tech, she worked as a professional classical musician and private music teacher. [_LinkedIn_](https://www.linkedin.com/in/i-mercer) | [_Github_](https://www.github.com/violatido)
+Ilana Rose Mercer is a software engineer living in New York City who is passionate about leveraging technology to help improve human quality of life. Before she learned how to code and became passionate about her career in tech, she worked as a professional classical musician and private music teacher. [_LinkedIn_]
 
 ### **Rachel Perkins**:
 
@@ -78,5 +78,5 @@ As a former high school math and yearbook teacher, Rachel took a cross country m
 
 [*LinkedIn*](https://www.linkedin.com/in/yvonneyeh) | [*Github*](https://www.github.com/yvonneyeh)
 
-Yvonne is a software engineer from the Silicon Valley who has never seen the show. Curiosity, creativity, and a love of learning are at the root of everything Yvonne does. She loves that coding because it is artful – there are infinite ways to code a program! Before she learned how to code, she worked in K-12 education, design, and mental/physical fitness. [_LinkedIn_](https://www.linkedin.com/in/yvonneyeh) | [_Github_](https://www.github.com/yvonneyeh)
+Yvonne is a software engineer from the Silicon Valley who has never seen the show. Curiosity, creativity, and a love of learning are at the root of everything Yvonne does. She loves that coding because it is artful – there are infinite ways to code a program! Before she learned how to code, she worked in K-12 education, design, and mental/physical fitness.
 
