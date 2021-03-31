@@ -154,9 +154,9 @@ def show_creators_json():
     print("*****\n****\n******\n******\n***")
     print(creators_data) # output: []
 
-    # jsonlist = [i.serialize for i in creators_data]
+    jsonlist = [i.serialize for i in creators_data]
 
-    # return jsonify(jsonlist)
+    return jsonify(jsonlist)
 
 
 @app.route('/api/user/<user_id>')
