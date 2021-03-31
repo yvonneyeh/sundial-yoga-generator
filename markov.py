@@ -18,12 +18,12 @@ def open_and_read_file(filepath):
 def make_list(text):
     """ Take the string of text, return a list of poses.
 
-    First split the text to create a list of poses. 
+    First split the text to create a list of poses.
 
     [cat, cow, downward dog, tree, etc ]
 
     """
-    poses = text.split(",\n")
+    poses = text.split("\n")
     # poses.append(poses)
     # To set a stop point, append None to the end of ou list.
     poses.append(None)
@@ -34,9 +34,9 @@ def make_list(text):
 def make_chains(poses):
     """Take in list of poses, return dictionary of pose tuples and options of poses that follow them.
 
-    Each key will be a tuple of two consecutive poses. 
+    Each key will be a tuple of two consecutive poses.
 
-    The value of a each will be a list containing every pose that follows the second tuple item.  
+    The value of a each will be a list containing every pose that follows the second tuple item.
 
     pose_dict = {
         (pose1, pose2): [option1, option2, option3],
