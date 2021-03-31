@@ -36,29 +36,6 @@ function Creators() {
   if (error) return <div>failed to load</div>;
   if (!creatorData) return <div>loading...</div>;
 
-  // if (error) return <div>failed to load</div>;
-  // if (!creatorData) return <div>loading...</div>;
-
-  // if (error) return <div>failed to load</div>;
-  // if (!creatorData) return <div>loading...</div>;
-
-  // if (error) return <div>failed to load</div>;
-  // if (!creatorData) return <div>loading...</div>;
-
-  // if (error) return <div>failed to load</div>;
-  // if (!creatorData) return <div>loading...</div>;
-
-  // if (error) return <div>failed to load</div>;
-  // if (!creatorData) return <div>loading...</div>;
-
-  // if (error) return <div>failed to load</div>;
-  // if (!creatorData) return <div>loading...</div>;
-
-  // if (error) return <div>failed to load</div>;
-  // if (!creatorData) return <div>loading...</div>;
-
-  // if (error) return <div>failed to load</div>;
-  // if (!creatorData) return <div>loading...</div>;
 
   const creatorCards = creatorData.map((creator, index) => (
     <CreatorCard

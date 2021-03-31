@@ -41,7 +41,7 @@ users_in_db = []
 
 
 def seed_users():
-    for n in range(20):
+    for n in range(100):
         email = f'yogi{n}@yoga.om'
         first_name = fake.first_name()
         last_name = fake.last_name()
@@ -58,7 +58,6 @@ creators_in_db = []
 
 def seed_creators():
     read_data = load_json('data/creators.json')
-    print("\n\n\n\n", read_data, "\n\n\n\n")
 
     for creator in read_data:
         print("\n\n\n", creator, "\n\n\n")
@@ -67,9 +66,7 @@ def seed_creators():
                                            github=creator['github'],
                                            linkedin=creator['linkedin'],
                                            about=creator['about'])
-        print("\n\n\n\n", creator_obj, "\n\n\n\n")
     creators_in_db.append(creator_obj)
-    print("\n\n\n\n", creators_in_db, "\n\n\n\n")
 
 
 seq_in_db = []

@@ -4,7 +4,7 @@ import "./App.css";
 import useSWR from "swr";
 import { Row, Col, Container } from "react-bootstrap";
 
-// This is the component for a creator card.
+// This is the component for a Pose card.
 function PoseCard(props) {
   return (
     <Col className="p-2 m-2 col-6 col-md-4 col-lg-3 col-xl-2">

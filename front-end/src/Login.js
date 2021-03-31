@@ -24,7 +24,7 @@ function SignUp() {
         return;
       }
       alert(
-        "You created an account! Build your favorite recipes to easily view your grocery list!"
+        "You created an account! Generate your favorite yoga sequences!"
       );
       response.json().then((data) => {
         console.log(JSON.stringify(data.user));
